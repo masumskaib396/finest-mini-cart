@@ -9,10 +9,9 @@ function fmc_options_scripts(){
     $iconcolor = get_theme_mod( 'fmc_cart_icon_color','#ffffff' );
     $iconsize = get_theme_mod( 'fmc_cart_icon_size','35px' );
     $boxradius = get_theme_mod( 'fmc_cart_icon_box_radius','50px' );
-    $countcolor = get_theme_mod( 'fmc_count_box_color','#ffffff' );
     $cbgcolor = get_theme_mod( 'fmc_count_box_bg_color','#7479FF' );
+    $countfont = get_theme_mod( 'count_typography_setting','14px' );
     $countsize = get_theme_mod( 'fmc_cart_count_size','24px' );
-    $fontsize = get_theme_mod( 'fmc_cart_font_size','14px' );
     $countradius = get_theme_mod( 'fmc_cart_count_box_radius','50px' );
 
     $fmc_dynamic_css  = '';
@@ -42,10 +41,7 @@ function fmc_options_scripts(){
          $fmc_dynamic_css .= '.finest-cart-icon { font-size:' . esc_attr( $iconsize ) .'px} ';
          $fmc_dynamic_css .= "\n";
     }
-    if($countcolor){
-        $fmc_dynamic_css .= '.finest-count-number { color:' . esc_attr( $countcolor ) .'} ';
-        $fmc_dynamic_css .= "\n";
-    }
+   
     if($cbgcolor){
         $fmc_dynamic_css .= '.finest-count-number { background-color:' . esc_attr( $cbgcolor ) .'} ';
         $fmc_dynamic_css .= "\n";
@@ -58,12 +54,30 @@ function fmc_options_scripts(){
         $fmc_dynamic_css .= '.finest-count-number { line-height:' . esc_attr( $countsize ) .'px} ';
         $fmc_dynamic_css .= "\n";
     }
-    if($fontsize){
-        $fmc_dynamic_css .= '.finest-count-number { font-size:' . esc_attr( $fontsize ) .'px} ';
-        $fmc_dynamic_css .= "\n";
-    }
+    
     if($countradius){
         $fmc_dynamic_css .= '.finest-count-number { border-radius:' . esc_attr( $countradius ) .'px} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    // typography
+    if( isset($countfont['font-family']) ){
+        $fmc_dynamic_css .= '.finest-count-number {font-family:' . esc_attr( $countfont['font-family'] ) .'} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if( isset($countfont['variant']) ){
+        $fmc_dynamic_css .= '.finest-count-number {font-weight:' . esc_attr( $countfont['variant'] ) .'px} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if( isset($countfont['font-size']) ){
+        $fmc_dynamic_css .= '.finest-count-number {font-size:' . esc_attr( $countfont['font-size'] ) .'px} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if( isset($countfont['letter-spacing']) ){
+        $fmc_dynamic_css .= '.finest-count-number {letter-spacing:' . esc_attr( $countfont['letter-spacing'] ) .'px} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if( isset($countfont['color']) ){
+        $fmc_dynamic_css .= '.finest-count-number {color:' . esc_attr( $countfont['color'] ) .'} ';
         $fmc_dynamic_css .= "\n";
     }
     
