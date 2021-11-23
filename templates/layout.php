@@ -1,4 +1,4 @@
-    <?php 
+    <?php
         $scsb = get_theme_mod('fmc_shopping_button', true);
         $stotal = get_theme_mod('fmc_shipping_total', true);
         $taxtotal = get_theme_mod('fmc_tax_total', true);
@@ -11,7 +11,7 @@
         $scbutton = get_theme_mod('fmc_close_button', true);
         $ssubtotal = get_theme_mod('fmc_subtotal', true);
     ?>
-    
+
     <div class="finest-area-top" >
         <div class="finest-cart-ttile">
             <h1><?php echo esc_html__('Quick Cart','finest-mini-cart'); ?></h1>

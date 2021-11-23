@@ -14,5 +14,10 @@ if (function_exists('kirki')) {
 		require_once(  FMC_INC . 'customizer/visibility.php' );
 	}
 
+	// Style
+	if ( file_exists(  FMC_INC . 'customizer/cart-style.php' ) ) {
+		require_once(  FMC_INC . 'customizer/cart-style.php' );
+	}
+
 
 }
