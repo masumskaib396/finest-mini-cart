@@ -24,6 +24,7 @@ define( 'FMC', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 
 // Plugin Function Folder Path
 define( 'FMC_INC', plugin_dir_path( __FILE__ ) . 'includes/' );
+define( 'FMC_LIB', plugin_dir_path( __FILE__ ) . 'lib/' );
 
 // Assets Folder URL
 define( 'FMC_ASSETS_CSS', plugins_url( 'assets/css/', __FILE__ ) );
@@ -32,5 +33,12 @@ define( 'FMC_ASSETS_SCROLLBAR_JS', plugins_url( 'assets/perfect-scrollbar/js/', 
 define( 'FMC_ASSETS_JS', plugins_url( 'assets/js/', __FILE__ ) );
 
 
-require_once( FMC_INC . 'base.php' );
+// Load the library
+if ( file_exists( FMC_LIB . 'settings.php' ) ) {
+	require_once  FMC_LIB . 'settings.php';
+}
+
+if ( file_exists( FMC_INC . 'base.php' ) ) {
+	require_once( FMC_INC . 'base.php' );
+}
 
