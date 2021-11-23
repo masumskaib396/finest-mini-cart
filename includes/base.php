@@ -21,3 +21,10 @@ if ( file_exists( FMC_INC . 'customizer/config.php' ) ) {
     require_once( FMC_INC . 'customizer/config.php' );
 }
 
+/*
+Custom css call
+*/
+if ( file_exists( FMC_INC . 'option-style.php' ) ) {
+    require_once( FMC_INC . 'option-style.php' );
+}
+

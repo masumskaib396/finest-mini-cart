@@ -25,7 +25,7 @@ Kirki::add_field( 'fmc_panel', [
 	'multiple'    => 1,
 	'choices'     => [
 		'cart_icon_right' => esc_html__( 'Cart Box Right', 'finest-mini-cart' ),
-		'cart_icon_left' => esc_html__( 'Cart Box Right', 'finest-mini-cart' ),
+		'cart_icon_left' => esc_html__( 'Cart Box Left', 'finest-mini-cart' ),
 	],
 ] );
 
