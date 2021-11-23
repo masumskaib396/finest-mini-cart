@@ -4,19 +4,22 @@ function fmc_options_scripts(){
 
     wp_enqueue_style('fmc-main', FMC_ASSETS_CSS . 'frontend.css',array(), FMC_VERSION );
 
-
-
-    // // margin
-    // $btn_margin = get_theme_mod( 'btn_margin' ) != false ? get_theme_mod( 'btn_margin' ) : '';
-    // $marimpld = is_array( $btn_margin ) ? implode(' ',$btn_margin) : '';
-
+    $cboxs = get_theme_mod( 'fmc_cart_icon_box_size' );
 
     $fmc_dynamic_css  = '';
 
-    // if($css){
-    //     $fmc_dynamic_css .= '.finest-quickview-button .storquickview { ' . esc_attr( $css ) .' } ';
-    //     $fmc_dynamic_css .= "\n";
-    // }
+     if($cboxs){
+         $fmc_dynamic_css .= '.finest-count { width:' . esc_attr( $cboxs ) .'px } ';
+         $fmc_dynamic_css .= "\n";
+    }
+     if($cboxs){
+         $fmc_dynamic_css .= '.finest-count { height:' . esc_attr( $cboxs ) .'px } ';
+         $fmc_dynamic_css .= "\n";
+    }
+     if($cboxs){
+         $fmc_dynamic_css .= '.finest-count { line-height:' . esc_attr( $cboxs ) .'px } ';
+         $fmc_dynamic_css .= "\n";
+    }
 
 
 

@@ -10,7 +10,7 @@ Kirki::add_field( 'fmc_panel', [
 	'type'        => 'custom',
 	'settings'    => 'cart_box',
 	'section'     => 'cart_icon_box_section',
-		'default'         => '<h3 style="padding:12px 0px; text-align: center; font-size: 16px; background:#ddd; color:#222; margin:0;">' . __( 'Cart Box', 'kirki' ) . '</h3>',
+		'default'         => '<h3 style="padding:12px 0px; text-align: center; font-size: 16px; background:#ddd; color:#222; margin:0;">' . __( 'Cart Box', 'finest-mini-cart' ) . '</h3>',
 	'priority'    => 10,
 ] );
 
