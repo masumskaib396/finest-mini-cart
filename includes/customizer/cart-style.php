@@ -38,6 +38,15 @@ Kirki::add_field( 'fmc_panel', [
 	'choices'     => [
 		'alpha' => true,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-count',
+			'function' => 'css',
+			'property' => 'background-color',
+		],
+	]
+
 ] );
 
 Kirki::add_field( 'fmc_panel', [
@@ -49,6 +58,14 @@ Kirki::add_field( 'fmc_panel', [
 	'choices'     => [
 		'alpha' => true,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-cart-icon',
+			'function' => 'css',
+			'property' => 'color',
+		],
+	]
 ] );
 
 
@@ -63,6 +80,50 @@ Kirki::add_field( 'fmc_panel', [
 		'max'  => 200,
 		'step' => 1,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-count',
+			'function' => 'css',
+			'property' => 'width',
+			'units'    => 'px',
+		],
+		[
+			'element'  => '.finest-count',
+			'function' => 'css',
+			'property' => 'height',
+			'units'    => 'px',
+		],
+		[
+			'element'  => '.finest-count',
+			'function' => 'css',
+			'property' => 'line-height',
+			'units'    => 'px',
+		],
+	]
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'slider',
+	'settings'    => 'fmc_cart_icon_box_radius',
+	'label'       => esc_html__( 'Cart Box Border Radius', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => 50,
+	'choices'     => [
+		'min'  => 0,
+		'max'  => 200,
+		'step' => 1,
+	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-count',
+			'function' => 'css',
+			'property' => 'border-radius',
+			'units'    => 'px',
+		],
+		
+	]
 ] );
 
 Kirki::add_field( 'fmc_panel', [
@@ -76,6 +137,15 @@ Kirki::add_field( 'fmc_panel', [
 		'max'  => 70,
 		'step' => 1,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-cart-icon',
+			'function' => 'css',
+			'property' => 'font-size',
+			'units'    => 'px',
+		],
+	]
 ] );
 
 Kirki::add_field( 'fmc_panel', [
@@ -95,6 +165,14 @@ Kirki::add_field( 'fmc_panel', [
 	'choices'     => [
 		'alpha' => true,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-count-number',
+			'function' => 'css',
+			'property' => 'color',
+		],
+	]
 ] );
 
 Kirki::add_field( 'fmc_panel', [
@@ -106,6 +184,14 @@ Kirki::add_field( 'fmc_panel', [
 	'choices'     => [
 		'alpha' => true,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-count-number',
+			'function' => 'css',
+			'property' => 'background-color',
+		],
+	]
 ] );
 
 Kirki::add_field( 'fmc_panel', [
@@ -119,11 +205,33 @@ Kirki::add_field( 'fmc_panel', [
 		'max'  => 70,
 		'step' => 1,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-count-number',
+			'function' => 'css',
+			'property' => 'width',
+			'units'    => 'px',
+		],
+		[
+			'element'  => '.finest-count-number',
+			'function' => 'css',
+			'property' => 'height',
+			'units'    => 'px',
+		],
+		[
+			'element'  => '.finest-count-number',
+			'function' => 'css',
+			'property' => 'line-height',
+			'units'    => 'px',
+		],
+	]
+
 ] );
 
 Kirki::add_field( 'fmc_panel', [
 	'type'        => 'slider',
-	'settings'    => 'fmc_cart_font_size',
+	'settings'    => 'fmc_cart_count_font_size',
 	'label'       => esc_html__( 'Cart Count Font Size', 'finest-mini-cart' ),
 	'section'     => 'cart_icon_box_section',
 	'default'     => 14,
@@ -132,4 +240,36 @@ Kirki::add_field( 'fmc_panel', [
 		'max'  => 70,
 		'step' => 1,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-count-number',
+			'function' => 'css',
+			'property' => 'font-size',
+			'units'    => 'px',
+		],
+	]
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'slider',
+	'settings'    => 'fmc_cart_count_box_radius',
+	'label'       => esc_html__( 'Cart Count Border Radius', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => 50,
+	'choices'     => [
+		'min'  => 0,
+		'max'  => 200,
+		'step' => 1,
+	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-count-number',
+			'function' => 'css',
+			'property' => 'border-radius',
+			'units'    => 'px',
+		],
+		
+	]
 ] );
