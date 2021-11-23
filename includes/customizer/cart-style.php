@@ -29,6 +29,28 @@ Kirki::add_field( 'fmc_panel', [
 	],
 ] );
 
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'color',
+	'settings'    => 'fmc_cart_icon_box_bg_color',
+	'label'       => __( 'Icon Box Background Color', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => '#000000',
+	'choices'     => [
+		'alpha' => true,
+	],
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'color',
+	'settings'    => 'fmc_cart_icon_color',
+	'label'       => __( 'Icon Color', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => '#ffffff',
+	'choices'     => [
+		'alpha' => true,
+	],
+] );
+
 
 Kirki::add_field( 'fmc_panel', [
 	'type'        => 'slider',
@@ -39,6 +61,75 @@ Kirki::add_field( 'fmc_panel', [
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 200,
+		'step' => 1,
+	],
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'slider',
+	'settings'    => 'fmc_cart_icon_size',
+	'label'       => esc_html__( 'Cart Icon Size', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => 35,
+	'choices'     => [
+		'min'  => 0,
+		'max'  => 70,
+		'step' => 1,
+	],
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'custom',
+	'settings'    => 'cart_count_box',
+	'section'     => 'cart_icon_box_section',
+		'default'         => '<h3 style="padding:12px 0px; text-align: center; font-size: 16px; background:#ddd; color:#222; margin:0;">' . __( 'Cart Count Box', 'finest-mini-cart' ) . '</h3>',
+	'priority'    => 10,
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'color',
+	'settings'    => 'fmc_count_box_color',
+	'label'       => __( 'Count Box Text Color', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => '#ffffff',
+	'choices'     => [
+		'alpha' => true,
+	],
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'color',
+	'settings'    => 'fmc_count_box_bg_color',
+	'label'       => __( 'Count Box Background Color', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => '#7479FF',
+	'choices'     => [
+		'alpha' => true,
+	],
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'slider',
+	'settings'    => 'fmc_cart_count_size',
+	'label'       => esc_html__( 'Cart Count Box Size', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => 24,
+	'choices'     => [
+		'min'  => 0,
+		'max'  => 70,
+		'step' => 1,
+	],
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'slider',
+	'settings'    => 'fmc_cart_font_size',
+	'label'       => esc_html__( 'Cart Count Font Size', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => 14,
+	'choices'     => [
+		'min'  => 0,
+		'max'  => 70,
 		'step' => 1,
 	],
 ] );

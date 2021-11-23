@@ -323,6 +323,7 @@ body.finest-body-show .finest-overlay {
 .product-content-area {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 .finest-area.finest-effect .finest-close {
   right: 0px;

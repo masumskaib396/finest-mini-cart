@@ -24,6 +24,8 @@ function fmc_options_scripts(){
 
 
 
+
+
     $fmc_dynamic_css = fmc_css_strip_whitespace( $fmc_dynamic_css );
 	wp_add_inline_style( 'fmc-main', $fmc_dynamic_css );
 
