@@ -12,12 +12,12 @@ if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
                $cartcheck = get_theme_mod( 'fmc_count_hide_checkout', true );
                $cartpage = get_theme_mod( 'fmc_count_hide_cart', true );
                $fmc_count_hide = '';
-               if (  $cartcheck == false && is_checkout() ) {
+               if (  ($cartcheck == false && is_checkout() ) || ( $cartpage == false && is_cart() ) ) {
 				    $fmc_count_hide = 'fmc-count-hide';
 			    }
-               if (  $cartpage == false && is_cart() ) {
-				    $fmc_count_hide = 'fmc-count-hide';
-			    }
+            //    if (  $cartpage == false && is_cart() ) {
+			// 	    $fmc_count_hide = 'fmc-count-hide';
+			//     }
             ?>
             <div id="finest-count" class="finest-count<?php echo( ( $fmc_count_hide != '' ) ? ' ' . esc_attr( $fmc_count_hide ) : '' ); ?>">
                 <div class="finest-cart-icon" >

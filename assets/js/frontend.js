@@ -48,9 +48,15 @@ jQuery(document).ready(function(jQuery){
 			jQuery( '#cart-count-number' ).html( cart_response['count'] );
 			jQuery( '#product-show-total' ).html( cart_response['count'] );
 			jQuery( '#finest-area' ).removeClass( 'finest-area-loading' );
-			
+			if ( ( ( finest.hide_count_checkout == false ) || ( finest.hide_count_cart == false ) ) && ( jQuery( 'body' ).hasClass( 'woocommerce-checkout' ) ||  jQuery( 'body' ).hasClass( 'woocommerce-cart' ) )  ) {
+				jQuery( '#finest-count' ).addClass( 'fmc-count-hide' );
+			}
+			else {
+				jQuery( '#finest-count' ).removeClass( 'fmc-count-hide' );
+			}
 		} );
 	}
+
 	jQuery( 'body' ).on( 'click tap', '#finest-continue', function() {
 		finest_hide_cart();
 	} );
