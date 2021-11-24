@@ -27,7 +27,7 @@ Kirki::add_field( 'fmc_panel', [
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'apply_btn_text',
-	'label'    => esc_html__( 'Apply Text', 'finest-mini-cart' ),
+	'label'    => esc_html__( 'Apply Button Text', 'finest-mini-cart' ),
 	'section'  => 'translation_settings',
 	'default'  => esc_html__( 'Apply', 'finest-mini-cart' ),
 	'priority' => 10,

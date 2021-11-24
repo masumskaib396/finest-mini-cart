@@ -10,11 +10,12 @@
         $scfiled = get_theme_mod('fmc_coupon_filed', true);
         $scbutton = get_theme_mod('fmc_close_button', true);
         $ssubtotal = get_theme_mod('fmc_subtotal', true);
+        $headtitle = get_theme_mod('quick_cart_text', 'Quick Cart' );
     ?>
 
     <div class="finest-area-top" >
         <div class="finest-cart-ttile">
-            <h1><?php echo esc_html__('Quick Cart','finest-mini-cart'); ?></h1>
+            <h1><?php echo esc_html( $headtitle ); ?></h1>
         </div>
         <?php if ( true == $scbutton ): ?>
         <div class="finest-close">
@@ -82,19 +83,24 @@
         <?php } } ?>
     </div>
     <div class="finest-area-bot">
-        <?php if ($scfiled): ?>
+        <?php
+        $cptext = get_theme_mod( 'coupon_placeholder_text', 'Enter your Coupon code' );
+        $applybtn = get_theme_mod( 'apply_btn_text', 'Apply' );
+        if ($scfiled): ?>
         <div class="finest-coupon">
             <div class="finiest_coupon_response" ></div>
             <div class="finest_coupon_field">
-                <input type="text" id="finiest_coupon_code" placeholder= "Enter your Coupon code">
-                <span class="finiest_coupon_submit"><?php echo esc_html__('Apply', 'finest-mini-cart'); ?> </span>
+                <input type="text" id="finiest_coupon_code" placeholder= "<?php echo esc_html($cptext); ?>">
+                <span class="finiest_coupon_submit"><?php echo esc_html($applybtn); ?> </span>
             </div>
         </div>
         <?php endif; ?>
-        <?php if ($spcount): ?>
+        <?php
+         $pqantity = get_theme_mod( 'product_quantity_text', 'Products' ); 
+        if ($spcount): ?>
         <div class="product-content-area">
             <div class="product-total-left">
-                <span class="product-quenty" ><?php echo esc_html__( 'Products', 'finest-mini-cart' ) ?></span>
+                <span class="product-quenty" ><?php echo esc_html( $pqantity ); ?></span>
             </div>
             <div class="product-total-right">
                 <span id="product-show-total" ><?php echo WC()->cart->cart_contents_count; ?></span>
@@ -102,10 +108,12 @@
         </div>
         <?php endif; ?>
 
-        <?php if ($ssubtotal): ?>
+        <?php 
+         $psubtotal = get_theme_mod( 'product_subtotal', 'Subtotal' ); 
+        if ($ssubtotal): ?>
         <div class="product-content-area">
             <div class="finest-subtotal-left">
-                <span class="product-subtotal" ><?php echo esc_html__( 'SubTotal', 'finest-mini-cart' ) ?></span>
+                <span class="product-subtotal" ><?php echo esc_html( $psubtotal ); ?></span>
             </div>
             <div id="finest-subtotal" class="finest-subtotal-right">
                 <span class="subtotal-count" ><?php echo WC()->cart->get_cart_subtotal() ?> </span>
@@ -113,30 +121,36 @@
         </div>
         <?php endif; ?>
 
-        <?php if ( true == $taxtotal ) : ?>
+        <?php 
+        $ptax = get_theme_mod( 'product_tax', 'Taxes' ); 
+        if ( true == $taxtotal ) : ?>
         <div class="product-content-area">
             <div class="finest-tax-left">
-                <span class="product-tax-left" ><?php echo esc_html__( 'Taxes', 'finest-mini-cart' ) ?></span>
+                <span class="product-tax-left" ><?php echo esc_html( $ptax ); ?></span>
             </div>
             <div id="finest-tax" class="finest-tax-right">
                 <span class="tax-count" ><?php echo wc_price(wc_round_tax_total(WC()->cart->get_cart_contents_tax() + WC()->cart->get_shipping_tax() + WC()->cart->get_fee_tax())); ?> </span>
             </div>
         </div>
         <?php endif; ?>
-        <?php if ( true == $stotal ): ?>
+        <?php
+         $pshipping = get_theme_mod( 'product_shipping_text', 'Shipping' );  
+        if ( true == $stotal ): ?>
         <div class="product-content-area">
             <div class="finest-shipping-left">
-                <span class="product-shipping" ><?php echo esc_html__( 'Shipping', 'finest-mini-cart' ) ?></span>
+                <span class="product-shipping" ><?php echo esc_html($pshipping); ?></span>
             </div>
             <div id="finest-shipping" class="finest-shipping-right">
                 <span class="product-shipping-count" ><?php echo WC()->cart->get_cart_shipping_total(); ?> </span>
             </div>
         </div>
         <?php endif; ?>
-
+         <?php 
+         $ptotal = get_theme_mod( 'product_total_text', 'Total' );  
+         ?>   
         <div class="product-content-area">
             <div class="finest-total-left">
-                <span class="finest-total-text" ><?php echo esc_html__( 'Total', 'finest-mini-cart' ) ?></span>
+                <span class="finest-total-text" ><?php echo esc_html( $ptotal ) ?></span>
             </div>
             <div id="finest-total" class="finest-total-right">
                 <span class="total-price">
@@ -146,15 +160,18 @@
                 </span>
             </div>
         </div>
+        <?php $pcheckout = get_theme_mod( 'check_out_text', 'Checkout' ); ?>
         <div class="finest-action-right">
             <a href="<?php echo esc_url( wc_get_checkout_url() ) ?>">
-            <?php echo esc_html__( 'Checkout', 'finest-mini-cart' ) ?>
+            <?php echo esc_html( $pcheckout ); ?>
             </a>
         </div>
-        <?php if ( true == $scsb ): ?>
+        <?php 
+        $ptotal = get_theme_mod( 'product_continue_text', 'Continue Shopping' );
+        if ( true == $scsb ): ?>
         <div class="finest-continue">
             <span id="finest-continue">
-                <?php echo esc_html__( 'Continue Shopping', 'finest-mini-cart' ) ?></span>
+                <?php echo esc_html( $ptotal ) ?></span>
         </div>
         <?php endif; ?>
     </div>

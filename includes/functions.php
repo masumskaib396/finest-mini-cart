@@ -15,9 +15,7 @@ if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
                if (  ($cartcheck == false && is_checkout() ) || ( $cartpage == false && is_cart() ) ) {
 				    $fmc_count_hide = 'fmc-count-hide';
 			    }
-            //    if (  $cartpage == false && is_cart() ) {
-			// 	    $fmc_count_hide = 'fmc-count-hide';
-			//     }
+           
             ?>
             <div id="finest-count" class="finest-count<?php echo( ( $fmc_count_hide != '' ) ? ' ' . esc_attr( $fmc_count_hide ) : '' ); ?>">
                 <div class="finest-cart-icon" >
@@ -130,6 +128,10 @@ add_action( 'wp_ajax_nopriv_finest_remove_item', 'finest_remove_item');
 //coupon code
 
 function finest_coupon_ajax_call() {
+    $fempty = get_theme_mod( 'coupn_field_empty', 'Coupon Code Field is Empty' );
+    $csuccesfully = get_theme_mod( 'coupn_field_empty', 'Coupon Applied Successfully' );
+    $invaild = get_theme_mod( 'coupn_field_imvaild', 'Invaild Coupon Code' );
+    $applied = get_theme_mod( 'coupn_code_applied', 'Coupon Code Already Applied!' );
 
     if ( ! isset( $_POST['security'] ) || ( ! wp_verify_nonce( $_POST['security'], 'finest-security' ) && ( $_POST['security'] != $_POST['nonce'] ) ) ) {
         die( '<div class="finest-error">' . esc_html__( 'Permissions check failed!', 'finest-mini-cart' ) . '</div>' );
@@ -140,7 +142,7 @@ function finest_coupon_ajax_call() {
 
     // Check coupon code to make sure is not empty
     if( empty( $code ) || !isset( $code ) ) {
-        $wfc_cpnfield_empty_txt = esc_html__('Coupon Code Field is Empty!', 'finest-mini-cart');
+        $wfc_cpnfield_empty_txt = esc_html($fempty);
         $wfc_cpnfield_empty = esc_html__('empty', 'finest-mini-cart');
         // Build our response
         $response = array(
@@ -162,7 +164,7 @@ function finest_coupon_ajax_call() {
 
     if (in_array($code, WC()->cart->get_applied_coupons())) {
 
-        $wfc_cpn_alapplied_txt = esc_html__('Coupon Code Already Applied.', 'finest-mini-cart');
+        $wfc_cpn_alapplied_txt = esc_html($applied);
         $wfc_cpn_already = esc_html__('already applied', 'finest-mini-cart');
 
         $response = array(
@@ -176,7 +178,7 @@ function finest_coupon_ajax_call() {
 
     } elseif( !$coupon->is_valid() ) {
 
-        $wfc_invalid_coupon_txt = esc_html__('Invaild Coupon Code.', 'finest-mini-cart');
+        $wfc_invalid_coupon_txt = esc_html( $invaild );
         $wfc_invalid_result = esc_html__('not valid', 'finest-mini-cart');
         // Build our response
         $response = array(
@@ -194,7 +196,7 @@ function finest_coupon_ajax_call() {
 
         WC()->cart->apply_coupon( $code );
 
-        $wfc_coupon_applied_suc_txt = esc_html__( 'Coupon Applied Successfully.', 'finest-mini-cart' );
+        $wfc_coupon_applied_suc_txt = esc_html( $csuccesfully );
         $wfc_coupon_success = esc_html__( 'Success', 'finest-mini-cart' );
         // Build our response
         $response = array(
@@ -222,7 +224,7 @@ function finest_add_variation_to_cart() {
     $product_id        = apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_POST['product_id'] ) );
     $quantity          = isset( $_POST['quantity'] ) ? 1 : wc_stock_amount( $_POST['quantity'] );
     $variation_id      = isset( $_POST['variation_id'] ) ? absint( $_POST['variation_id'] ) : '';
-    $variations        = isset( $_POST['variation'] ) ?  array_walk( $_POST['variation'] ) : '';
+    $variations        = isset( $_POST['variation'] ) ?  (array)$_POST['variation']   : '';
 
     $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations, $cart_item_data );
 
