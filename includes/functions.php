@@ -176,7 +176,7 @@ function finest_coupon_ajax_call() {
 
     } elseif( !$coupon->is_valid() ) {
 
-        $wfc_invalid_coupon_txt = esc_html__('Invalid code entered. Please try again.', 'finest-mini-cart');
+        $wfc_invalid_coupon_txt = esc_html__('Invaild Coupon Code.', 'finest-mini-cart');
         $wfc_invalid_result = esc_html__('not valid', 'finest-mini-cart');
         // Build our response
         $response = array(

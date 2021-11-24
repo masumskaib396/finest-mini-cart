@@ -86,7 +86,7 @@
         <div class="finest-coupon">
             <div class="finiest_coupon_response" ></div>
             <div class="finest_coupon_field">
-                <input type="text" id="finiest_coupon_code" placeholder= "Enter your promo code">
+                <input type="text" id="finiest_coupon_code" placeholder= "Enter your Coupon code">
                 <span class="finiest_coupon_submit"><?php echo esc_html__('Apply', 'finest-mini-cart'); ?> </span>
             </div>
         </div>

@@ -13,6 +13,9 @@ if (function_exists('kirki')) {
 	if ( file_exists(  FMC_INC . 'customizer/general.php' ) ) {
 		require_once(  FMC_INC . 'customizer/general.php' );
 	}
+	if ( file_exists(  FMC_INC . 'customizer/translations.php' ) ) {
+		require_once(  FMC_INC . 'customizer/translations.php' );
+	}
 	// Style
 	if ( file_exists(  FMC_INC . 'customizer/visibility.php' ) ) {
 		require_once(  FMC_INC . 'customizer/visibility.php' );
