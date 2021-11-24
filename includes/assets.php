@@ -27,4 +27,3 @@ function finest_register_enqueue_script(){
 
 };
 add_action( 'wp_enqueue_scripts', 'finest_register_enqueue_script' );
-

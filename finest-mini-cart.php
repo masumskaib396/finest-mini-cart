@@ -33,6 +33,21 @@ define( 'FMC_ASSETS_SCROLLBAR_JS', plugins_url( 'assets/perfect-scrollbar/js/', 
 define( 'FMC_ASSETS_JS', plugins_url( 'assets/js/', __FILE__ ) );
 
 
+function finest_mini_cart_missing_wc_notice() {
+	echo '<div class="error"><p><strong>' . sprintf( esc_html__( 'Finest Mini Cart View requires WooCommerce to be installed and active. You can download %s here.', 'finest-quickview' ), '<a href="https://woocommerce.com/" target="_blank">WooCommerce</a>' ) . '</strong></p></div>';
+}
+
+function finest_mini_cart_load_textdomain() {
+    load_plugin_textdomain( 'finest-mini-cart', false, dirname( __FILE__ ) . '/languages' );
+
+    if ( ! class_exists( 'WooCommerce' ) ) {
+		add_action( 'admin_notices', 'finest_mini_cart_missing_wc_notice' );
+		return;
+	}
+}
+add_action( 'plugins_loaded', 'finest_mini_cart_load_textdomain' );
+
+
 // Load the library
 if ( file_exists( FMC_LIB . 'settings.php' ) ) {
 	require_once  FMC_LIB . 'settings.php';

@@ -8,14 +8,14 @@ if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
             <div id="finest-area" class="finest-area finest-effect">
                 <?php  include(plugin_dir_path(dirname(__FILE__)) . 'templates/layout.php'); ?>
             </div>
-            <?php 
+            <?php
                $cartcheck = get_theme_mod( 'fmc_count_hide_checkout', true );
                $cartpage = get_theme_mod( 'fmc_count_hide_cart', true );
                $fmc_count_hide = '';
                if (  ($cartcheck == false && is_checkout() ) || ( $cartpage == false && is_cart() ) ) {
 				    $fmc_count_hide = 'fmc-count-hide';
 			    }
-           
+
             ?>
             <div id="finest-count" class="finest-count<?php echo( ( $fmc_count_hide != '' ) ? ' ' . esc_attr( $fmc_count_hide ) : '' ); ?>">
                 <div class="finest-cart-icon" >
@@ -222,18 +222,18 @@ function finest_add_variation_to_cart() {
     ob_start();
 
     $product_id        = apply_filters( 'woocommerce_add_to_cart_product_id', absint( $_POST['product_id'] ) );
-    $quantity          = isset( $_POST['quantity'] ) ? 1 : wc_stock_amount( $_POST['quantity'] );
+    $product           = wc_get_product( $product_id );
+    $quantity          = isset( $_POST['quantity']  ) && empty( $_POST['quantity'] ) ? 1 : wc_stock_amount( wp_unslash( $_POST['quantity'] ) );
+    $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity );
     $variation_id      = isset( $_POST['variation_id'] ) ? absint( $_POST['variation_id'] ) : '';
-    $variations        = isset( $_POST['variation'] ) ?  (array)$_POST['variation']   : '';
+    $product_status    = get_post_status( $product_id );
 
-    $passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations, $cart_item_data );
-
-    if ( $passed_validation && WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, $variations ) ) {
+    if ( $passed_validation && false !== WC()->cart->add_to_cart( $product_id, $quantity, $variation_id ) && 'publish' === $product_status ) {
 
         do_action( 'woocommerce_ajax_added_to_cart', $product_id );
 
-        if ( 'woocommerce_cart_redirect_after_add' == 'yes' ) {
-            wc_add_to_cart_message( $product_id );
+        if ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
+            wc_add_to_cart_message( array( $product_id => $quantity ), true );
         }
 
         // Return fragments
@@ -251,11 +251,12 @@ function finest_add_variation_to_cart() {
 
     }
 
-    die();
+    wp_die();
 }
 
-    add_action('wp_ajax_finest_add_variation_to_cart', 'finest_add_variation_to_cart');
-    add_action('wp_ajax_nopriv_finest_add_variation_to_cart', 'finest_add_variation_to_cart');
+
+add_action('wp_ajax_finest_add_variation_to_cart', 'finest_add_variation_to_cart');
+add_action('wp_ajax_nopriv_finest_add_variation_to_cart', 'finest_add_variation_to_cart');
 
 
 /**
@@ -286,9 +287,6 @@ function fmc_css_strip_whitespace( $css ) {
 
 	return trim( $css );
 }
-
-
-?>
 
 
 

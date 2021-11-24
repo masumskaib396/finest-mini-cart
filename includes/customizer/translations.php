@@ -42,6 +42,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Coupon Code Field is Empty', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'coupn_code_applied',
@@ -50,6 +51,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Coupon Code Already Applied!', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'coupn_field_imvaild',
@@ -58,6 +60,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Invaild Coupon Code', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'coupn_code_successfully',
@@ -66,6 +69,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Coupon Applied Successfully ', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'product_quantity_text',
@@ -74,6 +78,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Products', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'product_subtotal',
@@ -82,6 +87,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Subtotal', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'product_tax',
@@ -90,6 +96,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Taxes', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'product_shipping_text',
@@ -98,6 +105,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Shipping', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'product_total_text',
@@ -106,6 +114,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Total', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'product_continue_text',
@@ -114,6 +123,7 @@ Kirki::add_field( 'fmc_panel', [
 	'default'  => esc_html__( 'Continue Shopping', 'finest-mini-cart' ),
 	'priority' => 10,
 ] );
+
 Kirki::add_field( 'fmc_panel', [
 	'type'     => 'text',
 	'settings' => 'check_out_text',
