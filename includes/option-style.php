@@ -26,8 +26,8 @@ function fmc_options_scripts(){
     $concolor = get_theme_mod( 'continue_color','#ffffff' );
     $conheight = get_theme_mod( 'continue_height','55px' );
     $conradius = get_theme_mod( 'continue_border_radius','5px' );
-    $con_paddign = get_theme_mod( 'continue_padding' );
-    $conimplod = is_array($con_paddign ) ?  implode(' ', $con_paddign) : '';
+    $con_paddign = get_theme_mod( 'continue_padding','0px' );
+    $conimplod = implode(' ', $con_paddign);
 
     $fmc_dynamic_css  = '';
 

@@ -212,7 +212,7 @@
 			[
 				'element'  => '.finest-area-bot .finest-continue span',
 				'function' => 'css',
-				'property' => 'padding',
+				'property' => 'margin',
 			],
 		]
 
