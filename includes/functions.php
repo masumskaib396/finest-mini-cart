@@ -1,16 +1,22 @@
 <?php
 
 // footer cart icon loaded
+$cartcheck = get_theme_mod( 'fmc_count_hide_checkout', true );
+$cartpage = get_theme_mod( 'fmc_count_hide_cart', true );
+$cartpos = get_theme_mod( 'on_cart_position','bottom-right' );
+$effect = '';
+ if ( 'bottom-left' == $cartpos || 'top-left' == $cartpos ) {
+     $effect = 'finest-effect-right';
+ }
 
 if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
 
     function finest_mini_cart_wp_footer() { ?>
-            <div id="finest-area" class="finest-area finest-effect">
+            <div id="finest-area" class="finest-area finest-effect <?php echo $effect; ?>">
                 <?php  include(plugin_dir_path(dirname(__FILE__)) . 'templates/layout.php'); ?>
             </div>
             <?php
-               $cartcheck = get_theme_mod( 'fmc_count_hide_checkout', true );
-               $cartpage = get_theme_mod( 'fmc_count_hide_cart', true );
+              
                $fmc_count_hide = '';
                if (  ($cartcheck == false && is_checkout() ) || ( $cartpage == false && is_cart() ) ) {
 				    $fmc_count_hide = 'fmc-count-hide';
