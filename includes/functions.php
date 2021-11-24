@@ -12,10 +12,10 @@ if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
                $cartcheck = get_theme_mod( 'fmc_count_hide_checkout', true );
                $cartpage = get_theme_mod( 'fmc_count_hide_cart', true );
                $fmc_count_hide = '';
-               if (  $cartcheck == 'yes' && is_checkout()  ) {
+               if (  $cartcheck == false && is_checkout() ) {
 				    $fmc_count_hide = 'fmc-count-hide';
 			    }
-               if (  $cartpage == 'yes' && is_cart()()  ) {
+               if (  $cartpage == false && is_cart() ) {
 				    $fmc_count_hide = 'fmc-count-hide';
 			    }
             ?>

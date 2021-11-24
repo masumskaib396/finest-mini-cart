@@ -31,6 +31,7 @@ Kirki::add_field( 'fmc_panel', [
 		'on'  => esc_html__( 'Enable', 'finest-mini-cart' ),
 		'off' => esc_html__( 'Disable', 'finest-mini-cart' ),
 	],
+	
 ] );
 Kirki::add_field( 'fmc_panel', [
 	'type'        => 'switch',
