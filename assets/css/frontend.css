@@ -58,6 +58,22 @@
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
+.finest-count.finest-count-bottom-left {
+	right: auto;
+	left: 15px;
+}
+.finest-count.finest-count-top-left {
+	top: 40px;
+	bottom: auto; 
+  right: auto;
+  left: 15px;
+}
+.finest-count.finest-count-top-right {
+	top: 40px;
+	right: 15px;
+	bottom: auto;
+	left: auto; 
+}
 .finest-count.fmc-count-hide {
 	display: none !important; 
 }

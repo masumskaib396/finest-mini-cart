@@ -23,7 +23,7 @@ if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
 			    }
 
             ?>
-            <div id="finest-count" class="finest-count<?php echo( ( $fmc_count_hide != '' ) ? ' ' . esc_attr( $fmc_count_hide ) : '' ); ?>">
+            <div id="finest-count" class="finest-count <?php echo esc_attr( 'finest-count-' . $cartpos); ?><?php echo( ( $fmc_count_hide != '' ) ? ' ' . esc_attr( $fmc_count_hide ) : '' ); ?>">
                 <div class="finest-cart-icon" >
                     <!-- <span class="dashicons dashicons-cart"></span> -->
                     <i class="icon icon-shopping-bag-2"></i>
