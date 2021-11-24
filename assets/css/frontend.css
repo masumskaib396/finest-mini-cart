@@ -58,6 +58,9 @@
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
+.finest-count.fmc-count-hide {
+	display: none !important; 
+}
 body.finest-body-show .finest-overlay {
 	opacity: 1;
 	visibility: visible;

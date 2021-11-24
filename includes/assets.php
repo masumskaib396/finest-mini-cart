@@ -1,5 +1,7 @@
 <?php
 function finest_register_enqueue_script(){
+  $checkoutshow = get_theme_mod( 'fmc_count_hide_checkout',true );
+  $cartshow = get_theme_mod( 'fmc_count_hide_checkout',true );
 
     // All Css File Enqueue
     wp_enqueue_style('fmc-custom-fonts', FMC_ASSETS_CSS . 'custom-fonts.css', array() , '0.6.14', 'all');
@@ -18,7 +20,9 @@ function finest_register_enqueue_script(){
         'nonce'   => wp_create_nonce( 'finest-security' ),
         'auto_show' => 'yes',
         'finest_auto_show_normal' =>'yes',
-        'woocommerce_cart_redirect_after_add' => 'yes'
+        'woocommerce_cart_redirect_after_add' => 'yes',
+        'hide_count_checkout' =>  $checkoutshow,
+        'hide_count_cart' =>  $cartshow,
       ) );
 
 };

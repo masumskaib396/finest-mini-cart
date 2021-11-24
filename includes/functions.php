@@ -8,7 +8,18 @@ if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
             <div id="finest-area" class="finest-area finest-effect">
                 <?php  include(plugin_dir_path(dirname(__FILE__)) . 'templates/layout.php'); ?>
             </div>
-            <div id="finest-count" class="finest-count">
+            <?php 
+               $cartcheck = get_theme_mod( 'fmc_count_hide_checkout', true );
+               $cartpage = get_theme_mod( 'fmc_count_hide_cart', true );
+               $fmc_count_hide = '';
+               if (  $cartcheck == 'yes' && is_checkout()  ) {
+				    $fmc_count_hide = 'fmc-count-hide';
+			    }
+               if (  $cartpage == 'yes' && is_cart()()  ) {
+				    $fmc_count_hide = 'fmc-count-hide';
+			    }
+            ?>
+            <div id="finest-count" class="finest-count<?php echo( ( $fmc_count_hide != '' ) ? ' ' . esc_attr( $fmc_count_hide ) : '' ); ?>">
                 <div class="finest-cart-icon" >
                     <!-- <span class="dashicons dashicons-cart"></span> -->
                     <i class="icon icon-shopping-bag-2"></i>
