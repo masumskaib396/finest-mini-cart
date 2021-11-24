@@ -35,6 +35,13 @@
   -webkit-transform: translate3d( 380px, 0,0);
   transform: translate3d( 380px, 0, 0);
 }
+.finest-area.finest-effect-right {
+  left: 0;
+  width: 80%;
+  text-align: left;
+  -webkit-transform: translate3d( -380px, 0,0);
+  transform: translate3d( -380px, 0, 0);
+}
 .finest-area .finest-area-show {
 	-webkit-transform: translate3d(0px 0, 0);
 	transform: translate3d(0px, 0, 0);
