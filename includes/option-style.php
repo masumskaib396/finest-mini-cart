@@ -13,6 +13,21 @@ function fmc_options_scripts(){
     $countfont = get_theme_mod( 'count_typography_setting','14px' );
     $countsize = get_theme_mod( 'fmc_cart_count_size','24px' );
     $countradius = get_theme_mod( 'fmc_cart_count_box_radius','50px' );
+    // checkoutbutton
+    $chbgcolor = get_theme_mod( 'checkout_bg_color','#000000' );
+    $choutcolor = get_theme_mod( 'color_checkout','#ffffff' );
+    $chheight = get_theme_mod( 'checkout_height','55px' );
+    $chradius = get_theme_mod( 'checkout_border_radius','5px' );
+    $ch_paddign = get_theme_mod( 'checkout_padding','0px' );
+    $chimplod = is_array($ch_paddign ) ?  implode(' ', $ch_paddign) : '';
+
+    // continuebutton
+    $conbgcolor = get_theme_mod( 'continue_bg_color','#000000' );
+    $concolor = get_theme_mod( 'continue_color','#ffffff' );
+    $conheight = get_theme_mod( 'continue_height','55px' );
+    $conradius = get_theme_mod( 'continue_border_radius','5px' );
+    $con_paddign = get_theme_mod( 'continue_padding' );
+    $conimplod = is_array($con_paddign ) ?  implode(' ', $con_paddign) : '';
 
     $fmc_dynamic_css  = '';
 
@@ -81,8 +96,49 @@ function fmc_options_scripts(){
         $fmc_dynamic_css .= "\n";
     }
     
+    // checkout button
+    if($chbgcolor){
+        $fmc_dynamic_css .= '.finest-action-right a { background-color:' . esc_attr( $chbgcolor ) .'} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if($choutcolor){
+        $fmc_dynamic_css .= '.finest-action-right a { color:' . esc_attr( $choutcolor ) .'} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if($chheight){
+        $fmc_dynamic_css .= '.finest-action-right a { height:' . esc_attr( $chheight ) .'}px ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if($chimplod){
+        $fmc_dynamic_css .= '.finest-action-right { padding:' . esc_attr( $chimplod ) .'}';
+        $fmc_dynamic_css .= "\n";
+    }
+    if($chradius){
+        $fmc_dynamic_css .= '.finest-action-right a { border-radius:' . esc_attr( $chradius ) .'}px ';
+        $fmc_dynamic_css .= "\n";
+    }
 
-
+     // continue button
+     if($conbgcolor){
+        $fmc_dynamic_css .= '.finest-area-bot .finest-continue span { background-color:' . esc_attr( $conbgcolor ) .'} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if($concolor){
+        $fmc_dynamic_css .= '.finest-area-bot .finest-continue span { color:' . esc_attr( $concolor ) .'} ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if($conheight){
+        $fmc_dynamic_css .= '.finest-area-bot .finest-continue span { height:' . esc_attr( $conheight ) .'}px ';
+        $fmc_dynamic_css .= "\n";
+    }
+    if($conimplod){
+        $fmc_dynamic_css .= '.finest-area-bot .finest-continue span { margin:' . esc_attr( $conimplod ) .'}';
+        $fmc_dynamic_css .= "\n";
+    }
+    if($conradius){
+        $fmc_dynamic_css .= '.finest-area-bot .finest-continue span { border-radius:' . esc_attr( $conradius ) .'}px ';
+        $fmc_dynamic_css .= "\n";
+    }
 
     $fmc_dynamic_css = fmc_css_strip_whitespace( $fmc_dynamic_css );
 	wp_add_inline_style( 'fmc-main', $fmc_dynamic_css );
