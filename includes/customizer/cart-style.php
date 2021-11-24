@@ -19,13 +19,15 @@ Kirki::add_field( 'fmc_panel', [
 	'settings'    => 'on_cart_position',
 	'label'       => esc_html__( 'Cart Position', 'finest-mini-cart' ),
 	'section'     => 'cart_icon_box_section',
-	'default'     => 'cart_icon_right',
+	'default'     => 'bottom-right',
 	'placeholder' => esc_html__( 'Select an Position...', 'finest-mini-cart' ),
 	'priority'    => 10,
 	'multiple'    => 1,
 	'choices'     => [
-		'cart_icon_right' => esc_html__( 'Cart Box Right', 'finest-mini-cart' ),
-		'cart_icon_left' => esc_html__( 'Cart Box Left', 'finest-mini-cart' ),
+		'top-left' => esc_html__( 'Cart Box Top Left', 'finest-mini-cart' ),
+		'top-right' => esc_html__( 'Cart Box Top Right', 'finest-mini-cart' ),
+		'bottom-left' => esc_html__( 'Cart Box Bottom Left', 'finest-mini-cart' ),
+		'bottom-right' => esc_html__( 'Cart Box Bottom Right', 'finest-mini-cart' ),
 	],
 ] );
 
