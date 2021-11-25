@@ -8,6 +8,7 @@ if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
         $cartcheck = get_theme_mod( 'fmc_count_hide_checkout', true );
         $cartpage = get_theme_mod( 'fmc_count_hide_cart', true );
         $cartpos = get_theme_mod( 'on_cart_position','bottom-right' );
+        $cartview = get_theme_mod( 'on_cart_view', true );
         $effect = '';
          if ( 'bottom-left' == $cartpos || 'top-left' == $cartpos ) {
              $effect = 'finest-effect-right';
@@ -18,6 +19,9 @@ if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
             </div>
             <?php
                $fmc_count_hide = '';
+               if ( false == $cartview ) {
+                    $fmc_count_hide = 'fmc-count-hide';
+               }
                if (  ($cartcheck == false && is_checkout() ) || ( $cartpage == false && is_cart() ) ) {
 				    $fmc_count_hide = 'fmc-count-hide';
 			    }

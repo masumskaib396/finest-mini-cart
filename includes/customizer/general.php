@@ -68,8 +68,8 @@ Kirki::add_field( 'fmc_panel', [
 
 Kirki::add_field( 'fmc_panel', [
     'type'        => 'switch',
-    'settings'    => 'on_quick_view',
-	'label'       => esc_html__( 'Show Quick View', 'finest-mini-cart' ),
+    'settings'    => 'on_cart_view',
+	'label'       => esc_html__( 'Show Cart View', 'finest-mini-cart' ),
     'section'     => 'general_settings',
     'default'     => 'on',
     'priority'    => 10,

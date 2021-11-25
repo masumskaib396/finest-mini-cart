@@ -15,7 +15,6 @@
 	] );
 
 
-	// mmodal content
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'color',
 		'settings'    => 'checkout_bg_color',
@@ -55,6 +54,97 @@
 			],
 		]
 	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'checkout_border_property',
+		'label'       => esc_html__( 'Border Property', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'border',
+		'priority'    => 10,
+		'choices'     => [
+			'border'   => esc_html__( 'Border', 'finest-quickview' ),
+			'style' => esc_html__( 'Style', 'finest-quickview' ),
+			'color'  => esc_html__( 'Color', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'button_normal_hover',
+				'operator' => '==',
+				'value'    => 'button_normal',
+			]
+		],
+	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'dimension',
+		'settings'    => 'check_btn_border',
+		'label'       => esc_html__( 'Button Border', 'finest-quickview' ),
+		'description' => esc_html__( 'Apply Button Border.', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     =>'0px',
+		'active_callback' => [
+			[
+				'setting'  => 'checkout_border_property',
+				'operator' => '===',
+				'value'    => 'border',
+			],
+		],
+		
+
+	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'select',
+		'settings'    => 'ckout_border_style',
+		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'None',
+		'placeholder' => esc_html__( 'Select an option...', 'finest-quickview' ),
+		'priority'    => 10,
+		'multiple'    => 1,
+		'choices'     => [
+			'none' => esc_html__( 'None', 'finest-quickview' ),
+			'dotted' => esc_html__( 'Dotted', 'finest-quickview' ),
+			'dashed' => esc_html__( 'Dashed', 'finest-quickview' ),
+			'solid' => esc_html__( 'Solid', 'finest-quickview' ),
+			'double' => esc_html__( 'Double', 'finest-quickview' ),
+			'groove' => esc_html__( 'Groove', 'finest-quickview' ),
+			'ridge' => esc_html__( 'Ridge', 'finest-quickview' ),
+			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
+			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
+			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'checkout_border_property',
+				'operator' => '===',
+				'value'    => 'style',
+			],
+		],
+		
+	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'color',
+		'settings'    => 'checkout_border_color',
+		'label'       => __( 'Border Color', 'finest-quickview' ),
+		'description' => esc_html__( 'This is a border color', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#0088CC',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'checkout_border_property',
+				'operator' => '===',
+				'value'    => 'color',
+			],
+		],
+		
+	] );
+
 
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'slider',
@@ -194,6 +284,98 @@
 			],
 		]
 	] );
+
+	
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'checkout_border_property',
+		'label'       => esc_html__( 'Border Property', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'border',
+		'priority'    => 10,
+		'choices'     => [
+			'border'   => esc_html__( 'Border', 'finest-quickview' ),
+			'style' => esc_html__( 'Style', 'finest-quickview' ),
+			'color'  => esc_html__( 'Color', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'button_normal_hover',
+				'operator' => '==',
+				'value'    => 'button_normal',
+			]
+		],
+	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'dimension',
+		'settings'    => 'check_btn_border',
+		'label'       => esc_html__( 'Button Border', 'finest-quickview' ),
+		'description' => esc_html__( 'Apply Button Border.', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     =>'0px',
+		'active_callback' => [
+			[
+				'setting'  => 'checkout_border_property',
+				'operator' => '===',
+				'value'    => 'border',
+			],
+		],
+		
+
+	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'select',
+		'settings'    => 'ckout_border_style',
+		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'None',
+		'placeholder' => esc_html__( 'Select an option...', 'finest-quickview' ),
+		'priority'    => 10,
+		'multiple'    => 1,
+		'choices'     => [
+			'none' => esc_html__( 'None', 'finest-quickview' ),
+			'dotted' => esc_html__( 'Dotted', 'finest-quickview' ),
+			'dashed' => esc_html__( 'Dashed', 'finest-quickview' ),
+			'solid' => esc_html__( 'Solid', 'finest-quickview' ),
+			'double' => esc_html__( 'Double', 'finest-quickview' ),
+			'groove' => esc_html__( 'Groove', 'finest-quickview' ),
+			'ridge' => esc_html__( 'Ridge', 'finest-quickview' ),
+			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
+			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
+			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'checkout_border_property',
+				'operator' => '===',
+				'value'    => 'style',
+			],
+		],
+		
+	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'color',
+		'settings'    => 'checkout_border_color',
+		'label'       => __( 'Border Color', 'finest-quickview' ),
+		'description' => esc_html__( 'This is a border color', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#0088CC',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'checkout_border_property',
+				'operator' => '===',
+				'value'    => 'color',
+			],
+		],
+		
+	] );
+
 
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'dimensions',
