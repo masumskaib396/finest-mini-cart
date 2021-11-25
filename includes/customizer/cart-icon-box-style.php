@@ -6,6 +6,7 @@ Kirki::add_section( 'cart_icon_box_section', array(
     'priority'       => 160,
 ) );
 
+
 Kirki::add_field( 'fmc_panel', [
 	'type'        => 'custom',
 	'settings'    => 'cart_box',
@@ -28,6 +29,19 @@ Kirki::add_field( 'fmc_panel', [
 		'top-right' => esc_html__( 'Cart Box Top Right', 'finest-mini-cart' ),
 		'bottom-left' => esc_html__( 'Cart Box Bottom Left', 'finest-mini-cart' ),
 		'bottom-right' => esc_html__( 'Cart Box Bottom Right', 'finest-mini-cart' ),
+	],
+] );
+
+Kirki::add_field( 'fmc_panel', [
+	'type'        => 'slider',
+	'settings'    => 'cart_width_setting',
+	'label'       => esc_html__( 'Cart Width', 'finest-mini-cart' ),
+	'section'     => 'cart_icon_box_section',
+	'default'     => 380,
+	'choices'     => [
+		'min'  => 0,
+		'max'  => 500,
+		'step' => 1,
 	],
 ] );
 
