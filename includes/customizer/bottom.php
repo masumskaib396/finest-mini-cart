@@ -71,6 +71,476 @@
 		]
 	] );
 
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'custom',
+		'settings'    => 'coupon_box',
+		'section'     => 'finest_styles',
+			'default'         => '<h3 style="padding:12px 0px; text-align: center; font-size: 16px; background:#ddd; color:#222; margin:0;">' . __( 'Coupon Box', 'finest-mini-cart' ) . '</h3>',
+		'priority'    => 10,
+	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'slider',
+		'settings'    => 'coupon_width',
+		'label'       => esc_html__( 'Width', 'finest-mini-cart' ),
+		'section'     => 'finest_styles',
+		'default'     => 70,
+		'choices'     => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+	] );
+
+	Kirki::add_field( 'fmc_panel', [
+		'type'        => 'slider',
+		'settings'    => 'coupon_height',
+		'label'       => esc_html__( 'Height', 'finest-mini-cart' ),
+		'section'     => 'finest_styles',
+		'default'     => 40,
+		'choices'     => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'cupon_border_property',
+		'label'       => esc_html__( 'Border Property', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'border',
+		'priority'    => 10,
+		'choices'     => [
+			'border'   => esc_html__( 'Border', 'finest-quickview' ),
+			'style' => esc_html__( 'Style', 'finest-quickview' ),
+			'color'  => esc_html__( 'Color', 'finest-quickview' ),
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'dimension',
+		'settings'    => 'coupon_border',
+		'label'       => esc_html__( 'Border', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     =>'0px',
+		'active_callback' => [
+			[
+				'setting'  => 'cupon_border_property',
+				'operator' => '==',
+				'value'    => 'border',
+			],
+		],
+	] );
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'select',
+		'settings'    => 'coupon_border_style',
+		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'solid',
+		'priority'    => 10,
+		'multiple'    => 1,
+		'choices'     => [
+			'none' => esc_html__( 'None', 'finest-quickview' ),
+			'dotted' => esc_html__( 'Dotted', 'finest-quickview' ),
+			'dashed' => esc_html__( 'Dashed', 'finest-quickview' ),
+			'solid' => esc_html__( 'Solid', 'finest-quickview' ),
+			'double' => esc_html__( 'Double', 'finest-quickview' ),
+			'groove' => esc_html__( 'Groove', 'finest-quickview' ),
+			'ridge' => esc_html__( 'Ridge', 'finest-quickview' ),
+			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
+			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
+			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'cupon_border_property',
+				'operator' => '===',
+				'value'    => 'style',
+			],
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'color',
+		'settings'    => 'coupon_border_color',
+		'label'       => __( 'Color', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#0088CC',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'cupon_border_property',
+				'operator' => '===',
+				'value'    => 'color',
+			],
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'dimension',
+		'settings'    => 'coupon_border_radius',
+		'label'       => esc_html__( 'Radius', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     =>'0px',
+	] );
+
+	
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'applay_normal_hover',
+		'label'       => esc_html__( 'Appaly Button Control Content', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'appaly_normal',
+		'priority'    => 10,
+		'choices'     => [
+			'appaly_normal'   => esc_html__( 'Normal', 'finest-quickview' ),
+			'appaly_hover' => esc_html__( 'Hover', 'finest-quickview' ),
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'slider',
+		'settings'    => 'apply_width',
+		'label'       => esc_html__( 'Width', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 42,
+		'choices'     => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_normal',
+			]
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'slider',
+		'settings'    => 'apply_height',
+		'label'       => esc_html__( 'Height', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 42,
+		'choices'     => [
+			'min'  => 0,
+			'max'  => 100,
+			'step' => 1,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_normal',
+			]
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'color',
+		'settings'    => 'applay_background_color',
+		'label'       => __( 'Background Color', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#0088CC',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_normal',
+			]
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'color',
+		'settings'    => 'apply_text_color',
+		'label'       => __( 'Color', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#ffffff',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_normal',
+			]
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'aply_border_property',
+		'label'       => esc_html__( 'Border Property', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'border',
+		'priority'    => 10,
+		'choices'     => [
+			'border'   => esc_html__( 'Border', 'finest-quickview' ),
+			'style' => esc_html__( 'Style', 'finest-quickview' ),
+			'color'  => esc_html__( 'Color', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_normal',
+			]
+		],
+	] );
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'dimension',
+		'settings'    => 'apply_border',
+		'label'       => esc_html__( 'Border', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     =>'0px',
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '===',
+				'value'    => 'appaly_normal',
+			],
+			[
+				'setting'  => 'aply_border_property',
+				'operator' => '===',
+				'value'    => 'border',
+			],
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'select',
+		'settings'    => 'apply_border_style',
+		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'solid',
+		'priority'    => 10,
+		'multiple'    => 1,
+		'choices'     => [
+			'none' => esc_html__( 'None', 'finest-quickview' ),
+			'dotted' => esc_html__( 'Dotted', 'finest-quickview' ),
+			'dashed' => esc_html__( 'Dashed', 'finest-quickview' ),
+			'solid' => esc_html__( 'Solid', 'finest-quickview' ),
+			'double' => esc_html__( 'Double', 'finest-quickview' ),
+			'groove' => esc_html__( 'Groove', 'finest-quickview' ),
+			'ridge' => esc_html__( 'Ridge', 'finest-quickview' ),
+			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
+			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
+			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_normal',
+			],
+			[
+				'setting'  => 'aply_border_property',
+				'operator' => '==',
+				'value'    => 'style',
+			],
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'color',
+		'settings'    => 'btn_border_color',
+		'label'       => __( 'Color', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#0088CC',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_normal',
+			],
+			[
+				'setting'  => 'aply_border_property',
+				'operator' => '==',
+				'value'    => 'color',
+			],
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'dimension',
+		'settings'    => 'apply_border_radius',
+		'label'       => esc_html__( 'Radius', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     =>'0px',
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '===',
+				'value'    => 'appaly_normal',
+			]
+		],
+	] );
+
+	// apply hover
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'color',
+		'settings'    => 'apply_text_color_hover',
+		'label'       => __( 'Hover Color', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#ffffff',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '===',
+				'value'    => 'appaly_hover',
+			]
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'color',
+		'settings'    => 'apply_hover_bg_color',
+		'label'       => __( 'Button Background Color', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#0170B9',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '===',
+				'value'    => 'appaly_hover',
+			]
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'radio-buttonset',
+		'settings'    => 'apply_hover_border_property',
+		'label'       => esc_html__( 'Border Property', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'border',
+		'priority'    => 10,
+		'choices'     => [
+			'border'   => esc_html__( 'Border', 'finest-quickview' ),
+			'style' => esc_html__( 'Style', 'finest-quickview' ),
+			'color'  => esc_html__( 'Color', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_hover',
+			]
+		],
+	] );
+
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'dimension',
+		'settings'    => 'apply_hover_btn_border',
+		'label'       => esc_html__( 'Button Border', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     =>'0px',
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '===',
+				'value'    => 'appaly_hover',
+			],
+			[
+				'setting'  => 'apply_hover_border_property',
+				'operator' => '===',
+				'value'    => 'border',
+			],
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'select',
+		'settings'    => 'apply_hover_border_style',
+		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => 'solid',
+		'priority'    => 10,
+		'multiple'    => 1,
+		'choices'     => [
+			'none' => esc_html__( 'None', 'finest-quickview' ),
+			'dotted' => esc_html__( 'Dotted', 'finest-quickview' ),
+			'dashed' => esc_html__( 'Dashed', 'finest-quickview' ),
+			'solid' => esc_html__( 'Solid', 'finest-quickview' ),
+			'double' => esc_html__( 'Double', 'finest-quickview' ),
+			'groove' => esc_html__( 'Groove', 'finest-quickview' ),
+			'ridge' => esc_html__( 'Ridge', 'finest-quickview' ),
+			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
+			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
+			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '===',
+				'value'    => 'appaly_hover',
+			],
+			[
+				'setting'  => 'apply_hover_border_property',
+				'operator' => '===',
+				'value'    => 'style',
+			],
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'color',
+		'settings'    => 'apply_hover_border_color',
+		'label'       => __( 'Color ', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     => '#0088CC',
+		'choices'     => [
+			'alpha' => true,
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_hover',
+			],
+			[
+				'setting'  => 'apply_hover_border_property',
+				'operator' => '==',
+				'value'    => 'color',
+			],
+		],
+	] );
+
+	Kirki::add_field( 'finest_panel', [
+		'type'        => 'dimension',
+		'settings'    => 'hover_apply_border_radius',
+		'label'       => esc_html__( 'Button Radius', 'finest-quickview' ),
+		'section'     => 'finest_styles',
+		'default'     =>'5px',
+		'active_callback' => [
+			[
+				'setting'  => 'applay_normal_hover',
+				'operator' => '==',
+				'value'    => 'appaly_hover',
+			]
+		],
+	] );
 
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'custom',
