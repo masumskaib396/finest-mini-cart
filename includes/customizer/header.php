@@ -25,6 +25,8 @@ Kirki::add_field( 'fmc_panel', [
 	]
 ] );
 
+
+
 Kirki::add_field( 'fmc_panel', [
 	'type'        => 'slider',
 	'settings'    => 'mini_cart_width',
