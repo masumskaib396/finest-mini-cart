@@ -13,21 +13,7 @@ if (function_exists('kirki')) {
 	if ( file_exists(  FMC_INC . 'customizer/general.php' ) ) {
 		require_once(  FMC_INC . 'customizer/general.php' );
 	}
-
-	// Style
-	if ( file_exists(  FMC_INC . 'customizer/cart-style.php' ) ) {
-		require_once(  FMC_INC . 'customizer/cart-style.php' );
-	}
-
-	// Header Style
-	// if ( file_exists(  FMC_INC . 'customizer/header.php' ) ) {
-	// 	require_once(  FMC_INC . 'customizer/header.php' );
-	// }
-
-	// Header Style
-	if ( file_exists(  FMC_INC . 'customizer/product-box.php' ) ) {
-		require_once(  FMC_INC . 'customizer/product-box.php' );
-	}
+	// translations
 	if ( file_exists(  FMC_INC . 'customizer/translations.php' ) ) {
 		require_once(  FMC_INC . 'customizer/translations.php' );
 	}
@@ -42,6 +28,13 @@ if (function_exists('kirki')) {
 	// }
 
 
+	if ( file_exists(  FMC_INC . 'customizer/cart-style.php' ) ) {
+		require_once(  FMC_INC . 'customizer/cart-style.php' );
+	}
+	// bottom
+	if ( file_exists(  FMC_INC . 'customizer/bottom.php' ) ) {
+		require_once(  FMC_INC . 'customizer/bottom.php' );
+	}
 
 
 }
