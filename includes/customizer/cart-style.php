@@ -124,7 +124,7 @@ Kirki::add_field( 'fmc_panel', [
 			'property' => 'border-radius',
 			'units'    => 'px',
 		],
-		
+
 	]
 ] );
 
@@ -254,6 +254,6 @@ Kirki::add_field( 'fmc_panel', [
 			'property' => 'border-radius',
 			'units'    => 'px',
 		],
-		
+
 	]
 ] );
