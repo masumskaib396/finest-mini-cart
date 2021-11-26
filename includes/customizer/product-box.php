@@ -8,13 +8,14 @@ Kirki::add_section( 'product_settings', array(
 
 Kirki::add_field( 'fmc_panel', [
     'type'        => 'color',
-    'settings'    => 'fmc_cart_abc',
+    'settings'    => 'pro_bg_color',
     'label'       => __( 'Background Color', 'finest-mini-cart' ),
     'section'     => 'product_settings',
-    'default'     => '#000000',
+    'default'     => '#ffffff',
     'choices'     => [
         'alpha' => true,
     ],
+    'priority'    => 10,
     'transport' => 'postMessage',
     'js_vars'   => [
         [
@@ -28,7 +29,7 @@ Kirki::add_field( 'fmc_panel', [
 
 Kirki::add_field( 'fmc_panel', [
     'type'        => 'radio-buttonset',
-    'settings'    => 'btn_border_property',
+    'settings'    => 'product_border_property',
     'label'       => esc_html__( 'Border Property', 'finest-quickview' ),
     'section'     => 'product_settings',
     'default'     => 'border',
@@ -42,13 +43,14 @@ Kirki::add_field( 'fmc_panel', [
 
 Kirki::add_field( 'fmc_panel', [
     'type'        => 'dimension',
-    'settings'    => 'btn_border',
+    'settings'    => 'pro_border',
     'label'       => esc_html__( 'Botton Border', 'finest-quickview' ),
     'section'     => 'product_settings',
+    'priority'    => 10,
     'default'     =>'1px',
     'active_callback' => [
         [
-            'setting'  => 'btn_border_property',
+            'setting'  => 'product_border_property',
             'operator' => '===',
             'value'    => 'border',
         ],
@@ -57,7 +59,7 @@ Kirki::add_field( 'fmc_panel', [
 
 Kirki::add_field( 'fmc_panel', [
     'type'        => 'select',
-    'settings'    => 'btn_border_style',
+    'settings'    => 'pro_border_style',
     'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
     'section'     => 'product_settings',
     'default'     => 'dashed',
@@ -76,7 +78,7 @@ Kirki::add_field( 'fmc_panel', [
     ],
     'active_callback' => [
         [
-            'setting'  => 'btn_border_property',
+            'setting'  => 'product_border_property',
             'operator' => '==',
             'value'    => 'style',
         ],
@@ -85,9 +87,8 @@ Kirki::add_field( 'fmc_panel', [
 
 Kirki::add_field( 'fmc_panel', [
     'type'        => 'color',
-    'settings'    => 'btn_border_color',
-    'label'       => __( 'Color Control (with alpha channel)', 'finest-quickview' ),
-    'description' => esc_html__( 'This is a color control - with alpha channel.', 'finest-quickview' ),
+    'settings'    => 'pro_border_color',
+    'label'       => __( 'Color', 'finest-quickview' ),
     'section'     => 'product_settings',
     'default'     => '#E9E9E9',
     'choices'     => [
@@ -95,7 +96,7 @@ Kirki::add_field( 'fmc_panel', [
     ],
     'active_callback' => [
         [
-            'setting'  => 'btn_border_property',
+            'setting'  => 'product_border_property',
             'operator' => '==',
             'value'    => 'color',
         ],
@@ -104,9 +105,10 @@ Kirki::add_field( 'fmc_panel', [
 
 Kirki::add_field( 'fmc_panel', [
     'type'        => 'dimensions',
-    'settings'    => 'btn_padding',
+    'settings'    => 'pro_padding',
     'label'       => esc_html__( 'Padding', 'finest-quickview' ),
     'section'     => 'product_settings',
+    'priority'    => 10,
     'default'     => [
         'padding-top'    => '0px',
         'padding-right' => '0px',
@@ -117,9 +119,10 @@ Kirki::add_field( 'fmc_panel', [
 
 Kirki::add_field( 'fmc_panel', [
     'type'        => 'dimension',
-    'settings'    => 'btn_border_radius',
+    'settings'    => 'pro_border_radius',
     'label'       => esc_html__( 'Radius', 'finest-quickview' ),
     'section'     => 'product_settings',
+    'priority'    => 10,
     'default'     =>'0px',
 ] );
 
