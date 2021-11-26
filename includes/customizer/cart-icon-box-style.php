@@ -43,6 +43,15 @@ Kirki::add_field( 'fmc_panel', [
 		'max'  => 500,
 		'step' => 1,
 	],
+	'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-area',
+			'function' => 'css',
+			'property' => 'max-width',
+			'units'    => 'px',
+		],
+	]
 ] );
 
 Kirki::add_field( 'fmc_panel', [
