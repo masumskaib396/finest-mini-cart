@@ -124,5 +124,13 @@ Kirki::add_field( 'fmc_panel', [
     'section'     => 'product_settings',
     'priority'    => 10,
     'default'     =>'0px',
+    'transport' => 'postMessage',
+	'js_vars'   => [
+		[
+			'element'  => '.finest-area-middle .finest-item .finest-item-inner',
+			'function' => 'css',
+			'property' => 'border-radius',
+		],
+	]
 ] );
 
