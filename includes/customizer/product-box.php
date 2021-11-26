@@ -19,7 +19,7 @@ Kirki::add_field( 'fmc_panel', [
     'transport' => 'postMessage',
     'js_vars'   => [
         [
-            'element'  => '',
+            'element'  => '.finest-area-middle .finest-item .finest-item-inner',
             'function' => 'css',
             'property' => 'background-color',
         ],

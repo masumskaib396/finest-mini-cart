@@ -140,7 +140,7 @@ body.finest-body-show .finest-overlay {
   margin: 0px 0px 15px 0px;
 }
 
-.finest-area-middle.finest-items .finest-item .finest-item-inner {
+.finest-area-middle .finest-item .finest-item-inner {
   padding-bottom: 15px;
   display: flex;
   background-color: #ffffff;
