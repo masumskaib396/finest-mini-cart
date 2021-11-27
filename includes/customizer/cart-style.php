@@ -91,6 +91,15 @@
 			'max'  => 100,
 			'step' => 1,
 		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '#finiest_coupon_code',
+				'function' => 'css',
+				'property' => 'width',
+				'units'    => '%',
+			],
+		],
 	] );
 
 	Kirki::add_field( 'fmc_panel', [
@@ -104,6 +113,15 @@
 			'max'  => 100,
 			'step' => 1,
 		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '#finiest_coupon_code',
+				'function' => 'css',
+				'property' => 'height',
+				'units'    => 'px',
+			],
+		], 
 	] );
 
 	Kirki::add_field( 'finest_panel', [
@@ -133,6 +151,15 @@
 				'value'    => 'border',
 			],
 		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '#finiest_coupon_code',
+				'function' => 'css',
+				'property' => 'border',
+				'units'    => 'px',
+			],
+		],
 	] );
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'select',
@@ -154,10 +181,18 @@
 			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
 			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
 		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '#finiest_coupon_code',
+				'function' => 'css',
+				'property' => 'border-style',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'cupon_border_property',
-				'operator' => '===',
+				'operator' => '==',
 				'value'    => 'style',
 			],
 		],
@@ -168,9 +203,17 @@
 		'settings'    => 'coupon_border_color',
 		'label'       => __( 'Color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => '#0088CC',
+		'default'     => '#eaeaea',
 		'choices'     => [
 			'alpha' => true,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '#finiest_coupon_code',
+				'function' => 'css',
+				'property' => 'border-color',
+			],
 		],
 		'active_callback' => [
 			[
@@ -187,6 +230,15 @@
 		'label'       => esc_html__( 'Radius', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     =>'0px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '#finiest_coupon_code',
+				'function' => 'css',
+				'property' => 'border-radius',
+				'units'    => 'px',
+			],
+		],
 	] );
 
 
@@ -208,11 +260,20 @@
 		'settings'    => 'apply_width',
 		'label'       => esc_html__( 'Width', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => 42,
+		'default'     => 90,
 		'choices'     => [
 			'min'  => 0,
-			'max'  => 100,
+			'max'  => 200,
 			'step' => 1,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'width',
+				'units'    => 'px',
+			],
 		],
 		'active_callback' => [
 			[
@@ -228,7 +289,7 @@
 		'settings'    => 'apply_height',
 		'label'       => esc_html__( 'Height', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => 42,
+		'default'     => 40,
 		'choices'     => [
 			'min'  => 0,
 			'max'  => 100,
@@ -241,6 +302,15 @@
 				'value'    => 'appaly_normal',
 			]
 		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'height',
+				'units'    => 'px',
+			],
+		],
 	] );
 
 	Kirki::add_field( 'finest_panel', [
@@ -248,7 +318,7 @@
 		'settings'    => 'applay_background_color',
 		'label'       => __( 'Background Color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => '#0088CC',
+		'default'     => '#000000',
 		'choices'     => [
 			'alpha' => true,
 		],
@@ -258,6 +328,14 @@
 				'operator' => '==',
 				'value'    => 'appaly_normal',
 			]
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'background-color',
+			],
 		],
 	] );
 
@@ -276,6 +354,14 @@
 				'operator' => '==',
 				'value'    => 'appaly_normal',
 			]
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'color',
+			],
 		],
 	] );
 
@@ -305,6 +391,15 @@
 		'label'       => esc_html__( 'Border', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     =>'0px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'border',
+				'units'    => 'px',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'applay_normal_hover',
@@ -324,7 +419,7 @@
 		'settings'    => 'apply_border_style',
 		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => 'solid',
+		'default'     => 'none',
 		'priority'    => 10,
 		'multiple'    => 1,
 		'choices'     => [
@@ -338,6 +433,14 @@
 			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
 			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
 			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'border-style',
+			],
 		],
 		'active_callback' => [
 			[
@@ -355,12 +458,20 @@
 
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'color',
-		'settings'    => 'btn_border_color',
+		'settings'    => 'apply_border_color',
 		'label'       => __( 'Color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => '#0088CC',
+		'default'     => '#ffffff',
 		'choices'     => [
 			'alpha' => true,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'border-color',
+			],
 		],
 		'active_callback' => [
 			[
@@ -381,7 +492,16 @@
 		'settings'    => 'apply_border_radius',
 		'label'       => esc_html__( 'Radius', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     =>'0px',
+		'default'     =>'5px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'border-radius',
+				'units'    => 'px',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'applay_normal_hover',
@@ -402,10 +522,18 @@
 		'choices'     => [
 			'alpha' => true,
 		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit:hover',
+				'function' => 'css',
+				'property' => 'color',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'applay_normal_hover',
-				'operator' => '===',
+				'operator' => '==',
 				'value'    => 'appaly_hover',
 			]
 		],
@@ -414,11 +542,19 @@
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'color',
 		'settings'    => 'apply_hover_bg_color',
-		'label'       => __( 'Button Background Color', 'finest-quickview' ),
+		'label'       => __( 'Hover Background Color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     => '#0170B9',
 		'choices'     => [
 			'alpha' => true,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit:hover',
+				'function' => 'css',
+				'property' => 'background-color',
+			],
 		],
 		'active_callback' => [
 			[
@@ -457,6 +593,15 @@
 		'label'       => esc_html__( 'Button Border', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     =>'0px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit:hover',
+				'function' => 'css',
+				'property' => 'border',
+				'units'    => 'px',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'applay_normal_hover',
@@ -465,7 +610,7 @@
 			],
 			[
 				'setting'  => 'apply_hover_border_property',
-				'operator' => '===',
+				'operator' => '==',
 				'value'    => 'border',
 			],
 		],
@@ -476,7 +621,7 @@
 		'settings'    => 'apply_hover_border_style',
 		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => 'solid',
+		'default'     => 'none',
 		'priority'    => 10,
 		'multiple'    => 1,
 		'choices'     => [
@@ -490,6 +635,14 @@
 			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
 			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
 			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit:hover',
+				'function' => 'css',
+				'property' => 'border-style',
+			],
 		],
 		'active_callback' => [
 			[
@@ -510,9 +663,17 @@
 		'settings'    => 'apply_hover_border_color',
 		'label'       => __( 'Color ', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => '#0088CC',
+		'default'     => '#ffffff',
 		'choices'     => [
 			'alpha' => true,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit:hover',
+				'function' => 'css',
+				'property' => 'color',
+			],
 		],
 		'active_callback' => [
 			[
@@ -534,6 +695,16 @@
 		'label'       => esc_html__( 'Button Radius', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     =>'5px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finiest_coupon_submit:hover',
+				'function' => 'css',
+				'property' => ' border-radius',
+				'units'    => 'px',
+
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'applay_normal_hover',
@@ -568,7 +739,6 @@
 		'type'        => 'color',
 		'settings'    => 'checkout_bg_color',
 		'label'       => __( 'Background Color', 'finest-mini-cart' ),
-		'description' => esc_html__( 'Checkout Background Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => '#000000',
 		'choices'     => [
@@ -651,7 +821,6 @@
 		'type'        => 'dimensions',
 		'settings'    => 'checkout_padding',
 		'label'       => esc_html__( 'Margin', 'finest-mini-cart' ),
-		'description' => esc_html__( 'Applay Margin.', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => [
 			'padding-top'    => '10px',
@@ -700,11 +869,18 @@
 
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'dimension',
-		'settings'    => 'btn_border',
-		'label'       => esc_html__( 'Button Border', 'finest-quickview' ),
-		'description' => esc_html__( 'Apply Button Border.', 'finest-quickview' ),
+		'settings'    => 'chck_btn_border',
+		'label'       => esc_html__( 'Border', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     =>'0px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-action-right',
+				'function' => 'css',
+				'property' => 'border',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'checkout_hover_normal_setting',
@@ -721,11 +897,10 @@
 
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'select',
-		'settings'    => 'btn_border_style',
+		'settings'    => 'check_border_style',
 		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => 'solid',
-		'placeholder' => esc_html__( 'Select an option...', 'finest-quickview' ),
+		'default'     => 'none',
 		'priority'    => 10,
 		'multiple'    => 1,
 		'choices'     => [
@@ -739,6 +914,14 @@
 			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
 			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
 			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-action-right',
+				'function' => 'css',
+				'property' => 'border-style',
+			],
 		],
 		'active_callback' => [
 			[
@@ -757,13 +940,20 @@
 
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'color',
-		'settings'    => 'btn_border_color',
-		'label'       => __( 'Color Control (with alpha channel)', 'finest-quickview' ),
-		'description' => esc_html__( 'This is a color control - with alpha channel.', 'finest-quickview' ),
+		'settings'    => 'check_border_color',
+		'label'       => __( 'Color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     => '#0088CC',
 		'choices'     => [
 			'alpha' => true,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-action-right',
+				'function' => 'css',
+				'property' => 'border-color',
+			],
 		],
 		'active_callback' => [
 			[
@@ -811,8 +1001,7 @@
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'color',
 		'settings'    => 'checkout_hover_bg_color',
-		'label'       => __( 'Hover Background Color', 'finest-mini-cart' ),
-		'description' => esc_html__( 'Hover Background Color', 'finest-mini-cart' ),
+		'label'       => __( 'Background Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => '#000000',
 		'choices'     => [
@@ -838,8 +1027,7 @@
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'color',
 		'settings'    => 'checkout_hover_color',
-		'label'       => __( 'Hover Color', 'finest-mini-cart' ),
-		'description' => esc_html__( 'HoverColor', 'finest-mini-cart' ),
+		'label'       => __( 'Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => '#ffffff',
 		'choices'     => [
@@ -885,11 +1073,18 @@
 
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'dimension',
-		'settings'    => 'hover_btn_border',
-		'label'       => esc_html__( 'Button Border', 'finest-quickview' ),
-		'description' => esc_html__( 'Apply Button Border.', 'finest-quickview' ),
+		'settings'    => 'hover_check_border',
+		'label'       => esc_html__( 'Border', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     =>'0px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-action-right:hover',
+				'function' => 'css',
+				'property' => 'border',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'checkout_hover_normal_setting',
@@ -906,11 +1101,10 @@
 
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'select',
-		'settings'    => 'btn_hover_border_style',
+		'settings'    => 'check_hover_border_style',
 		'label'       => esc_html__( 'Border Style', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => 'solid',
-		'placeholder' => esc_html__( 'Select an option...', 'finest-quickview' ),
+		'default'     => 'none',
 		'priority'    => 10,
 		'multiple'    => 1,
 		'choices'     => [
@@ -924,6 +1118,14 @@
 			'inset' => esc_html__( 'Inset', 'finest-quickview' ),
 			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
 			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-action-right:hover',
+				'function' => 'css',
+				'property' => 'border-style',
+			],
 		],
 		'active_callback' => [
 			[
@@ -942,13 +1144,20 @@
 
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'color',
-		'settings'    => 'btn_hover_border_color',
-		'label'       => __( 'Color Control (with alpha channel)', 'finest-quickview' ),
-		'description' => esc_html__( 'This is a color control - with alpha channel.', 'finest-quickview' ),
+		'settings'    => 'check_hover_border_color',
+		'label'       => __( 'Color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     => '#0088CC',
 		'choices'     => [
 			'alpha' => true,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-action-right:hover',
+				'function' => 'css',
+				'property' => 'border-color',
+			],
 		],
 		'active_callback' => [
 			[
@@ -1020,7 +1229,6 @@
 		'type'        => 'color',
 		'settings'    => 'continue_bg_color',
 		'label'       => __( 'Background Color', 'finest-mini-cart' ),
-		'description' => esc_html__( 'Checkout Background Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => '#000000',
 		'choices'     => [
@@ -1047,7 +1255,6 @@
 		'type'        => 'color',
 		'settings'    => 'continue_color',
 		'label'       => __( 'Color', 'finest-mini-cart' ),
-		'description' => esc_html__( 'Checkout Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => '#ffffff',
 		'choices'     => [
@@ -1123,10 +1330,18 @@
 
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'dimension',
-		'settings'    => 'check_btn_border',
+		'settings'    => 'continue_btn_border',
 		'label'       => esc_html__( 'Border', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     =>'1px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-area-bot .finest-continue span',
+				'function' => 'css',
+				'property' => 'border',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'continue_hover_normal_setting',
@@ -1163,6 +1378,14 @@
 			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
 			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
 		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-area-bot .finest-continue span',
+				'function' => 'css',
+				'property' => 'border-style',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'continue_hover_normal_setting',
@@ -1182,11 +1405,18 @@
 		'type'        => 'color',
 		'settings'    => 'continue_border_color',
 		'label'       => __( 'Border Color', 'finest-quickview' ),
-		'description' => esc_html__( 'This is a border color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     => '#0088CC',
 		'choices'     => [
 			'alpha' => true,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-area-bot .finest-continue span',
+				'function' => 'css',
+				'property' => 'border-color',
+			],
 		],
 		'active_callback' => [
 			[
@@ -1208,7 +1438,6 @@
 		'type'        => 'dimensions',
 		'settings'    => 'continue_padding',
 		'label'       => esc_html__( 'Margin', 'finest-mini-cart' ),
-		'description' => esc_html__( 'Applay Margin.', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => [
 			'margin-top'    => '10px',
@@ -1269,7 +1498,6 @@
 		'type'        => 'color',
 		'settings'    => 'continue_hover_bg_color',
 		'label'       => __( 'Hover Background Color', 'finest-mini-cart' ),
-		'description' => esc_html__( 'Hover Background Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => '#000000',
 		'choices'     => [
@@ -1278,7 +1506,7 @@
 		'transport' => 'postMessage',
 		'js_vars'   => [
 			[
-				'element'  => '.finest-area-bot .finest-continue span',
+				'element'  => '.finest-area-bot .finest-continue span:hover',
 				'function' => 'css',
 				'property' => 'background-color',
 			],
@@ -1296,7 +1524,6 @@
 		'type'        => 'color',
 		'settings'    => 'continue_hover_color',
 		'label'       => __( 'Color', 'finest-mini-cart' ),
-		'description' => esc_html__( 'Hover Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
 		'default'     => '#ffffff',
 		'choices'     => [
@@ -1305,7 +1532,7 @@
 		'transport' => 'postMessage',
 		'js_vars'   => [
 			[
-				'element'  => '.finest-area-bot .finest-continue span',
+				'element'  => '.finest-area-bot .finest-continue span:hover',
 				'function' => 'css',
 				'property' => 'color',
 			],
@@ -1346,6 +1573,14 @@
 		'label'       => esc_html__( 'Hover Border', 'finest-quickview' ),
 		'section'     => 'finest_styles',
 		'default'     =>'0px',
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-area-bot .finest-continue span:hover',
+				'function' => 'css',
+				'property' => 'border',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'continue_hover_normal_setting',
@@ -1382,6 +1617,14 @@
 			'outset' => esc_html__( 'Outset', 'finest-quickview' ),
 			'initial' => esc_html__( 'Initial', 'finest-quickview' ),
 		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-area-bot .finest-continue span:hover',
+				'function' => 'css',
+				'property' => 'border-style',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'continue_hover_normal_setting',
@@ -1405,6 +1648,14 @@
 		'default'     => '#0088CC',
 		'choices'     => [
 			'alpha' => true,
+		],
+		'transport' => 'postMessage',
+		'js_vars'   => [
+			[
+				'element'  => '.finest-area-bot .finest-continue span:hover',
+				'function' => 'css',
+				'property' => 'border-color',
+			],
 		],
 		'active_callback' => [
 			[
@@ -1435,7 +1686,7 @@
 		'transport' => 'postMessage',
 		'js_vars'   => [
 			[
-				'element'  => '.finest-area-bot .finest-continue span',
+				'element'  => '.finest-area-bot .finest-continue span:hover',
 				'function' => 'css',
 				'property' => 'border-radius',
 				'units'    => 'px',
