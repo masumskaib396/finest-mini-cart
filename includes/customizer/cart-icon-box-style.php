@@ -50,6 +50,7 @@ Kirki::add_field( 'fmc_panel', [
 			'function' => 'css',
 			'property' => 'max-width',
 			'units'    => 'px',
+			'suffix' => '!important',
 		],
 	]
 ] );

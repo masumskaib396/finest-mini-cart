@@ -15,12 +15,14 @@ function fmc_options_scripts(){
     $pro_cart_width = get_theme_mod( 'cart_width_setting', '380px' );
     $cartpos = get_theme_mod( 'on_cart_position','bottom-right' );
 
+
    $fmc_dynamic_css  = '';
 
    if($pro_bg_color){
         $fmc_dynamic_css .= '.finest-area-middle .finest-item .finest-item-inner { background-color: ' . esc_attr( $pro_bg_color ) . ' } ';
         $fmc_dynamic_css .= "\n";
     }
+
     if($pro_border){
         $fmc_dynamic_css .= '.finest-area-middle .finest-item .finest-item-inner,.finest-area-top { border-bottom: ' . esc_attr( $pro_border ) . ' } ';
         $fmc_dynamic_css .= "\n";
@@ -60,6 +62,16 @@ function fmc_options_scripts(){
             $fmc_dynamic_css .= "\n";
         }
     }
+
+
+
+
+
+    // Cart Style Css
+    if ( file_exists(  FMC_INC . 'custom-css/cart-style.php' ) ) {
+        require_once(  FMC_INC . 'custom-css/cart-style.php' );
+    };
+
 
     $fmc_dynamic_css = fmc_css_strip_whitespace( $fmc_dynamic_css );
 	wp_add_inline_style( 'fmc-main', $fmc_dynamic_css );

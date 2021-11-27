@@ -29,7 +29,7 @@
 			],
 		],
 	] );
-	
+
 
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'color',
@@ -47,11 +47,12 @@
 				.finest-area-middle.finest-items .finest-item-title a, .finest-cart-ttile h1, .finest-area-middle.finest-items .finest-item-qty-plus, .finest-area-middle.finest-items .finest-item-qty-minus, .finest-total-right span.total-price, input#finiest_coupon_code:focus, .finest-area-middle.finest-items .finest-item-qty .finest-item-qty-inner input ',
 				'function' => 'css',
 				'property' => 'color',
+				'suffix' => '!important',
 			],
 		]
 	] );
-	
-	
+
+
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'color',
 		'settings'    => 'mini_cart_box_bg_color',
@@ -188,7 +189,7 @@
 		'default'     =>'0px',
 	] );
 
-	
+
 	Kirki::add_field( 'finest_panel', [
 		'type'        => 'radio-buttonset',
 		'settings'    => 'applay_normal_hover',
@@ -1098,7 +1099,7 @@
 		]
 	] );
 
-	
+
 	Kirki::add_field( 'fmc_panel', [
 		'type'        => 'radio-buttonset',
 		'settings'    => 'continue_border_property',
@@ -1138,7 +1139,7 @@
 				'value'    => 'border',
 			],
 		],
-		
+
 
 	] );
 
@@ -1174,7 +1175,7 @@
 				'value'    => 'style',
 			],
 		],
-		
+
 	] );
 
 	Kirki::add_field( 'fmc_panel', [
@@ -1199,7 +1200,7 @@
 				'value'    => 'color',
 			],
 		],
-		
+
 	] );
 
 
@@ -1357,7 +1358,7 @@
 				'value'    => 'border',
 			],
 		],
-		
+
 
 	] );
 
@@ -1393,7 +1394,7 @@
 				'value'    => 'style',
 			],
 		],
-		
+
 	] );
 
 	Kirki::add_field( 'fmc_panel', [
@@ -1417,7 +1418,7 @@
 				'value'    => 'color',
 			],
 		],
-		
+
 	] );
 
 	Kirki::add_field( 'fmc_panel', [

@@ -23,15 +23,15 @@ if (function_exists('kirki')) {
 	}
 
 
-	 if ( file_exists(  FMC_INC . 'customizer/bottom.php' ) ) {
-	 	require_once(  FMC_INC . 'customizer/bottom.php' );
+	 if ( file_exists(  FMC_INC . 'customizer/cart-style.php' ) ) {
+	 	require_once(  FMC_INC . 'customizer/cart-style.php' );
 	 }
 
 
 	if ( file_exists(  FMC_INC . 'customizer/cart-icon-box-style.php' ) ) {
 		require_once(  FMC_INC . 'customizer/cart-icon-box-style.php' );
 	}
-	
+
 	if ( file_exists(  FMC_INC . 'customizer/product-box.php' ) ) {
 		require_once(  FMC_INC . 'customizer/product-box.php' );
 	}
