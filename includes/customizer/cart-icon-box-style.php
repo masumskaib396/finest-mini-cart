@@ -58,7 +58,7 @@ Kirki::add_field( 'fmc_panel', [
 Kirki::add_field( 'fmc_panel', [
 	'type'        => 'color',
 	'settings'    => 'fmc_cart_icon_box_bg_color',
-	'label'       => __( 'Icon Box Background Color', 'finest-mini-cart' ),
+	'label'       => __( 'Background Color', 'finest-mini-cart' ),
 	'section'     => 'cart_icon_box_section',
 	'default'     => '#000000',
 	'choices'     => [
@@ -182,28 +182,25 @@ Kirki::add_field( 'fmc_panel', [
 	'priority'    => 10,
 ] );
 
+
 Kirki::add_field( 'fmc_panel', [
-	'type'        => 'typography',
-	'settings'    => 'count_typography_setting',
-	'label'       => esc_html__( 'Count Typography', 'finest-mini-cart' ),
+	'type'        => 'color',
+	'settings'    => 'fmc_count_box_nm_color',
+	'label'       => __( 'Count Box Background Color', 'finest-mini-cart' ),
 	'section'     => 'cart_icon_box_section',
-	'default'     => [
-		'font-family'    => 'Roboto',
-		'variant'        => 'regular',
-		'font-size'      => '14px',
-		'letter-spacing' => '0',
-		'color'          => '#ffffff'
+	'default'     => '#ffffff',
+	'choices'     => [
+		'alpha' => true,
 	],
-	'priority'    => 10,
-	'transport'   => 'auto',
-	'output'      => [
+	'transport' => 'postMessage',
+	'js_vars'   => [
 		[
-			'element' => '.finest-count-number',
+			'element'  => '.finest-count-number',
+			'function' => 'css',
+			'property' => 'color',
 		],
-	],
+	]
 ] );
-
-
 Kirki::add_field( 'fmc_panel', [
 	'type'        => 'color',
 	'settings'    => 'fmc_count_box_bg_color',

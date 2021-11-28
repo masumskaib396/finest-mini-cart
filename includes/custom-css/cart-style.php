@@ -66,7 +66,7 @@ if($global_color){
     $fmc_dynamic_css .= "\n";
 }
 
-if($mini_cart_box_bg_color){
+if($mini_cart_box_bg_color) {
     $fmc_dynamic_css .= '#finest-area {background-color: ' . esc_attr( $mini_cart_box_bg_color ) . ' } ';
     $fmc_dynamic_css .= "\n";
 }
