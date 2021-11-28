@@ -218,7 +218,7 @@
 		'active_callback' => [
 			[
 				'setting'  => 'cupon_border_property',
-				'operator' => '===',
+				'operator' => '==',
 				'value'    => 'color',
 			],
 		],
@@ -236,7 +236,7 @@
 				'element'  => '#finiest_coupon_code',
 				'function' => 'css',
 				'property' => 'border-radius',
-				'units'    => 'px',
+				
 			],
 		],
 	] );
@@ -308,6 +308,12 @@
 				'element'  => '.finiest_coupon_submit',
 				'function' => 'css',
 				'property' => 'height',
+				'units'    => 'px',
+			],
+			[
+				'element'  => '.finiest_coupon_submit',
+				'function' => 'css',
+				'property' => 'line-height',
 				'units'    => 'px',
 			],
 		],
@@ -499,7 +505,6 @@
 				'element'  => '.finiest_coupon_submit',
 				'function' => 'css',
 				'property' => 'border-radius',
-				'units'    => 'px',
 			],
 		],
 		'active_callback' => [
@@ -701,7 +706,6 @@
 				'element'  => '.finiest_coupon_submit:hover',
 				'function' => 'css',
 				'property' => ' border-radius',
-				'units'    => 'px',
 
 			],
 		],

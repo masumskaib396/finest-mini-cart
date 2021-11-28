@@ -11,8 +11,8 @@ $coupon_border_style = get_theme_mod( 'coupon_border_style', 'solid' );
 $coupon_border_color = get_theme_mod( 'coupon_border_color', '#eaeaea' );
 $coupon_border_radius = get_theme_mod( 'coupon_border_radius', '0px' );
 // apply button
-$apply_button_width = get_theme_mod( 'apply_width', '42px' );
-$apply_button_height = get_theme_mod( 'apply_height', '90px' );
+$apply_button_width = get_theme_mod( 'apply_width', '90px' );
+$apply_button_height = get_theme_mod( 'apply_height', '40px' );
 $applay_bg_color = get_theme_mod( 'applay_background_color', '#000000' );
 $apply_txt_color = get_theme_mod( 'apply_text_color', '#ffffff' );
 $apply_border = get_theme_mod( 'apply_border', '0px' );
@@ -37,11 +37,11 @@ $check_border_style = get_theme_mod( 'check_border_style', 'none' );
 $check_border_color = get_theme_mod( 'check_border_color', '#ffffff' );
 $checkout_border_radius = get_theme_mod( 'checkout_border_radius', '5px' );
 $checkout_hover_bg_color = get_theme_mod( 'checkout_hover_bg_color', '#000000' );
-$checkout_hover_color = get_theme_mod( 'checkout_hover_color', '#ffffff' );
+$checkout_hover_color = get_theme_mod( 'checkout_hover_color', '#ffffff !important' );
 $hover_check_border = get_theme_mod( 'hover_check_border', '0px' );
 $check_hover_border_style = get_theme_mod( 'check_hover_border_style', 'none' );
 $check_hover_border_color = get_theme_mod( 'check_hover_border_color', '#ffffff' );
-$checkout_hover_border_radius = get_theme_mod( 'checkout_hover_border_radius', 'none' );
+$checkout_hover_border_radius = get_theme_mod( 'checkout_hover_border_radius', '0px' );
 
 //continue
 $continue_bg_color = get_theme_mod( 'continue_bg_color', '#000000' );
@@ -59,7 +59,7 @@ $continue_hover_color = get_theme_mod( 'continue_hover_color', '#ffffff' );
 $contine_hover_btn_border = get_theme_mod( 'contine_hover_btn_border', '0px' );
 $continue_hover_border_style = get_theme_mod( 'continue_hover_border_style', 'none' );
 $continue_hover_border_color = get_theme_mod( 'continue_hover_border_color', '#ffffff' );
-$continue_hover_border_radius = get_theme_mod( 'continue_hover_border_radius', '5px' );
+$continue_hover_border_radius = get_theme_mod( 'continue_hover_border_radius', '0px' );
 
 if($global_color){
     $fmc_dynamic_css .= '#finest-area, #finest-total, .product-total-left .product-quenty, .product-total-right #product-show-total, .finest-subtotal-left .product-subtotal, .finest-subtotal-right .subtotal-count, .finest-tax-left .product-tax-left, .finest-tax-right .tax-count, .finest-shipping-left .product-shipping, .finest-total-right .product-shipping-count, .finest-total-left span.finest-total-text, .finest-shipping-right, .finest-action-right, .finest-area-bot .finest-continue span, .finest-area-middle.finest-items .finest-item-title a, .finest-cart-ttile h1, .finest-area-middle.finest-items .finest-item-qty-plus, .finest-area-middle.finest-items .finest-item-qty-minus, .finest-total-right span.total-price, input#finiest_coupon_code:focus, .finest-area-middle.finest-items .finest-item-qty .finest-item-qty-inner input {color: ' . esc_attr( $global_color ) . ' } ';
@@ -103,9 +103,9 @@ if ( 'bottom-right' == $cartpos || 'top-right' == $cartpos ) {
 //coupon box 
 
 if($coupon_height || $coupon_width){
-    $fmc_dynamic_css .= '#finiest_coupon_code {height: ' . esc_attr( $coupon_height ) . ' } ';
+    $fmc_dynamic_css .= '#finiest_coupon_code {height: ' . esc_attr( $coupon_height ) . 'px } ';
     $fmc_dynamic_css .= "\n";
-    $fmc_dynamic_css .= '#finiest_coupon_code {width: ' . esc_attr( $coupon_width ) . ' } ';
+    $fmc_dynamic_css .= '#finiest_coupon_code {width: ' . esc_attr( $coupon_width ) . '%} ';
     $fmc_dynamic_css .= "\n";
 }
 if( $coupon_border || $coupon_border_style || $coupon_border_color ){
@@ -117,16 +117,18 @@ if( $coupon_border || $coupon_border_style || $coupon_border_color ){
     $fmc_dynamic_css .= "\n";
 }
 if( $coupon_border_radius ){
-    $fmc_dynamic_css .= '#finiest_coupon_code {border-radius: ' . esc_attr( $coupon_border_radius ) . ' } ';
+    $fmc_dynamic_css .= '#finiest_coupon_code {border-radius: ' . esc_attr( $coupon_border_radius ) . 'px } ';
     $fmc_dynamic_css .= "\n";
 }
 
 // apply button
 
 if( $apply_button_width || $apply_button_height ){
-    $fmc_dynamic_css .= '.finiest_coupon_submit {width: ' . esc_attr( $apply_button_width ) . ' } ';
+    $fmc_dynamic_css .= '.finiest_coupon_submit {width: ' . esc_attr( $apply_button_width ) . 'px } ';
     $fmc_dynamic_css .= "\n";
-    $fmc_dynamic_css .= '.finiest_coupon_submit {height: ' . esc_attr( $apply_button_height ) . ' } ';
+    $fmc_dynamic_css .= '.finiest_coupon_submit {height: ' . esc_attr( $apply_button_height ) . 'px } ';
+    $fmc_dynamic_css .= "\n";
+    $fmc_dynamic_css .= '.finiest_coupon_submit {line-height: ' . esc_attr( $apply_button_height ) . 'px } ';
     $fmc_dynamic_css .= "\n";
 }
 if( $applay_bg_color ){
@@ -174,15 +176,15 @@ if( $hover_apply_border_radius ){
 
 // checkout
 if( $checkout_bg_color ){
-    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span {background-color: ' . esc_attr( $checkout_bg_color ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a {background-color: ' . esc_attr( $checkout_bg_color ) . ' } ';
     $fmc_dynamic_css .= "\n";
 }
 if( $color_checkout ){
-    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span {color: ' . esc_attr( $color_checkout ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a {color: ' . esc_attr( $color_checkout ) . ' } ';
     $fmc_dynamic_css .= "\n";
 }
 if( $checkout_height ){
-    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span {height: ' . esc_attr( $checkout_height ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a {height: ' . esc_attr( $checkout_height ) . 'px } ';
     $fmc_dynamic_css .= "\n";
 }
 if( $checkoutpadding ){
@@ -198,28 +200,28 @@ if( $chck_btn_border || $check_border_style || $check_border_color ){
     $fmc_dynamic_css .= "\n";
 }
 if( $checkout_border_radius ){
-    $fmc_dynamic_css .= '.finest-action-right a {border-radius: ' . esc_attr( $checkout_border_radius ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a {border-radius: ' . esc_attr( $checkout_border_radius ) . 'px } ';
     $fmc_dynamic_css .= "\n";
 }
 // hover
 if( $checkout_hover_bg_color ){
-    $fmc_dynamic_css .= '.finest-action-right a {background-color: ' . esc_attr( $checkout_hover_bg_color ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a:hover {background-color: ' . esc_attr( $checkout_hover_bg_color ) . ' } ';
     $fmc_dynamic_css .= "\n";
 }
 if( $checkout_hover_color ){
-    $fmc_dynamic_css .= '.finest-action-right a {color: ' . esc_attr( $checkout_hover_color ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a:hover {color: ' . esc_attr( $checkout_hover_color ) . ' } ';
     $fmc_dynamic_css .= "\n";
 }
 if( $hover_check_border || $check_hover_border_style ||$check_hover_border_color ){
-    $fmc_dynamic_css .= '.finest-action-right a {border: ' . esc_attr( $hover_check_border ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a:hover {border: ' . esc_attr( $hover_check_border ) . ' } ';
     $fmc_dynamic_css .= "\n";
-    $fmc_dynamic_css .= '.finest-action-right a {border-style: ' . esc_attr( $check_hover_border_style ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a:hover {border-style: ' . esc_attr( $check_hover_border_style ) . ' } ';
     $fmc_dynamic_css .= "\n";
-    $fmc_dynamic_css .= '.finest-action-right a {border-color: ' . esc_attr($check_hover_border_color ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a:hover {border-color: ' . esc_attr($check_hover_border_color ) . ' } ';
     $fmc_dynamic_css .= "\n";
 }
 if( $checkout_hover_border_radius ){
-    $fmc_dynamic_css .= '.finest-action-right a {border-radius: ' . esc_attr( $checkout_hover_border_radius ) . ' } ';
+    $fmc_dynamic_css .= '.finest-action-right a:hover {border-radius: ' . esc_attr( $checkout_hover_border_radius ) . 'px } ';
     $fmc_dynamic_css .= "\n";
 }
 
@@ -233,7 +235,7 @@ if( $continue_color ){
     $fmc_dynamic_css .= "\n";
 }
 if( $continue_height ){
-    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span {height: ' . esc_attr( $continue_height ) . ' } ';
+    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span {height: ' . esc_attr( $continue_height ) . 'px } ';
     $fmc_dynamic_css .= "\n";
 }
 if( $continuepadding ){
@@ -249,7 +251,7 @@ if( $continue_btn_border || $continue_border_style || $continue_border_color ){
     $fmc_dynamic_css .= "\n";
 }
 if( $continue_border_radius ){
-    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span {border-radius: ' . esc_attr( $continue_border_radius ) . ' } ';
+    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span {border-radius: ' . esc_attr( $continue_border_radius ) . 'px } ';
     $fmc_dynamic_css .= "\n";
 }
 // hover
@@ -270,6 +272,6 @@ if( $contine_hover_btn_border || $continue_hover_border_style ||$continue_hover_
     $fmc_dynamic_css .= "\n";
 }
 if( $continue_hover_border_radius ){
-    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span:hover {border-radius: ' . esc_attr( $continue_hover_border_radius ) . ' } ';
+    $fmc_dynamic_css .= '.finest-area-bot .finest-continue span:hover {border-radius: ' . esc_attr( $continue_hover_border_radius ) . 'px } ';
     $fmc_dynamic_css .= "\n";
 }

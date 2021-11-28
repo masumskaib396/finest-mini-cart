@@ -15,7 +15,7 @@ if($icon_bg_color) {
     $fmc_dynamic_css .= "\n";
 }
 if($icon_normal_color) {
-    $fmc_dynamic_css .= '.finest-count {background-color: ' . esc_attr( $icon_normal_color ) . ' } ';
+    $fmc_dynamic_css .= '.finest-count {color: ' . esc_attr( $icon_normal_color ) . ' } ';
     $fmc_dynamic_css .= "\n";
 }
 if($fmc_box_size) {
