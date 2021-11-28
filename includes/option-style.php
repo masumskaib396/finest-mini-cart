@@ -17,6 +17,9 @@ function fmc_options_scripts(){
     if ( file_exists(  FMC_INC . 'custom-css/product-style.php' ) ) {
         require_once(  FMC_INC . 'custom-css/product-style.php' );
     };
+    if ( file_exists(  FMC_INC . 'custom-css/cart-box.php' ) ) {
+        require_once(  FMC_INC . 'custom-css/cart-box.php' );
+    };
 
 
     $fmc_dynamic_css = fmc_css_strip_whitespace( $fmc_dynamic_css );
