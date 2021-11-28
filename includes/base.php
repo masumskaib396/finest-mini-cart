@@ -28,3 +28,7 @@ if ( file_exists( FMC_INC . 'option-style.php' ) ) {
     require_once( FMC_INC . 'option-style.php' );
 }
 
+// admin
+if ( file_exists( FMC_INC . 'admin.php' ) ) {
+    require_once( FMC_INC . 'admin.php' );
+}

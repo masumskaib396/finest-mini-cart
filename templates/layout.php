@@ -1,4 +1,5 @@
     <?php
+
         $scsb = get_theme_mod('fmc_shopping_button', true);
         $stotal = get_theme_mod('fmc_shipping_total', true);
         $taxtotal = get_theme_mod('fmc_tax_total', true);
