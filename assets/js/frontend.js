@@ -4,11 +4,11 @@
 
 jQuery(document).ready(function(jQuery){
     "use strict";
-   
-    
+
+
 	// Perfect scrollbar
 	finest_perfect_scrollbar();
-   
+
     jQuery( document ).on( 'click', '#finest-count', function(e) {
         e.preventDefault();
         finest_show_cart();
@@ -72,7 +72,7 @@ jQuery(document).ready(function(jQuery){
         jQuery( '#finest-area' ).removeClass( 'finest-area-show' );
         jQuery( 'body' ).removeClass( 'finest-body-show' );
     }
-   
+
     // plus plus
 
     jQuery( 'body' ).on( 'click', '#finest-area .finest-item-qty-minus', function() {
@@ -152,7 +152,7 @@ jQuery(document).ready(function(jQuery){
 		finest_update_qty( item_key, item_qty );
 
 	} );
-	
+
 
 	function finest_update_qty( cart_item_key, cart_item_qty ) {
 		var data = {
@@ -169,7 +169,7 @@ jQuery(document).ready(function(jQuery){
 			jQuery( '#product-show-total' ).html( cart_response['count'] );
 			jQuery( '.tax-count' ).html( cart_response['tax_price'] );
 			jQuery( '.total-price' ).html( cart_response['total_price'] );
-			
+
 		} );
 	}
 
@@ -181,7 +181,7 @@ jQuery(document).ready(function(jQuery){
 		finest_remove_item( item_key );
 		jQuery( this ).closest( '.finest-item' ).slideUp();
 	} );
-	
+
 function finest_remove_item( cart_item_key ) {
 	var data = {
 		action: 'finest_remove_item',
@@ -196,7 +196,7 @@ function finest_remove_item( cart_item_key ) {
 		jQuery( '#product-show-total' ).html( cart_response['count'] );
 		jQuery( '.tax-count' ).html( cart_response['tax_price'] );
 		jQuery( '.total-price' ).html( cart_response['total_price'] );
-		
+
 	} );
 }
 
@@ -207,11 +207,11 @@ function finest_perfect_scrollbar() {
 
 // coupon code
 jQuery('body').on('click', '.finiest_coupon_submit', function(e) {
-	e.preventDefault(); 
-	
+	e.preventDefault();
+
 	var couponCode = jQuery("#finiest_coupon_code").val();
-	
-	jQuery.ajax({ 
+
+	jQuery.ajax({
 		nonce: jQuery( '#finest-nonce' ).val(),
 		security: finest.nonce,
 		url:finest.ajaxurl,

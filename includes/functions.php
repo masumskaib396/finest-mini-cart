@@ -4,7 +4,7 @@
 
 if ( !function_exists( 'finest_mini_cart_wp_footer' ) ) {
 
-    function finest_mini_cart_wp_footer() { 
+    function finest_mini_cart_wp_footer() {
         $cartcheck = get_theme_mod( 'fmc_count_hide_checkout', true );
         $cartpage = get_theme_mod( 'fmc_count_hide_cart', true );
         $cartpos = get_theme_mod( 'on_cart_position','bottom-right' );

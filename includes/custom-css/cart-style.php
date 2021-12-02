@@ -3,7 +3,12 @@ $pro_cart_width = get_theme_mod( 'cart_width_setting', '380px' );
 $cartpos = get_theme_mod( 'on_cart_position','bottom-right' );
 $global_color = get_theme_mod( 'global_color', '#000' );
 $mini_cart_box_bg_color = get_theme_mod( 'mini_cart_box_bg_color', '#fff' );
-$global_typography = get_theme_mod( 'global_typography', 'Roboto' );
+
+
+$global_typography = get_theme_mod( 'global_typography', [] );
+
+
+
 $coupon_height = get_theme_mod( 'coupon_height', '40px' );
 $coupon_width = get_theme_mod( 'coupon_width', '70%' );
 $coupon_border = get_theme_mod( 'coupon_border', '1px' );
@@ -72,13 +77,18 @@ if($mini_cart_box_bg_color) {
 }
 
 
-if($global_typography){
-    $fmc_dynamic_css .= '#finest-area, #finest-total, .product-total-left .product-quenty, .product-total-right #product-show-total, .finest-subtotal-left .product-subtotal, .finest-subtotal-right .subtotal-count, .finest-tax-left .product-tax-left, .finest-tax-right .tax-count, .finest-shipping-left .product-shipping, .finest-total-right .product-shipping-count, .finest-total-left span.finest-total-text, .finest-shipping-right, .finest-action-right, .finest-area-bot .finest-continue span{font-family: ' . esc_attr( $mini_cart_box_bg_color ) . ' } ';
-    $fmc_dynamic_css .= "\n";
+if( isset($global_typography['font-weight'] ) || isset($global_typography['font-style']) || isset($global_typography['font-family'] )) {
+      $fmc_dynamic_css .= '#finest-area, #finest-total, .product-total-left .product-quenty, .product-total-right #product-show-total, .finest-subtotal-left .product-subtotal, .finest-subtotal-right .subtotal-count, .finest-tax-left .product-tax-left, .finest-tax-right .tax-count, .finest-shipping-left .product-shipping, .finest-total-right .product-shipping-count, .finest-total-left span.finest-total-text, .finest-shipping-right, .finest-action-right, .finest-area-bot .finest-continue span, .finest-area-middle.finest-items .finest-item-title a, .finest-cart-ttile h1, .finest-area-middle.finest-items .finest-item-qty-plus, .finest-area-middle.finest-items .finest-item-qty-minus, .finest-total-right span.total-price, input#finiest_coupon_code:focus, .finest-area-middle.finest-items .finest-item-qty .finest-item-qty-inner input {
+      font-family: ' . esc_attr( $global_typography['font-family'] ) .';
+      font-weight: ' . esc_attr( $global_typography['font-weight'] ) .';
+      font-style: '.$global_typography['font-style'].';
 
-    $fmc_dynamic_css .= '#finest-area, #finest-total, .product-total-left .product-quenty, .product-total-right #product-show-total, .finest-subtotal-left .product-subtotal, .finest-subtotal-right .subtotal-count, .finest-tax-left .product-tax-left, .finest-tax-right .tax-count, .finest-shipping-left .product-shipping, .finest-total-right .product-shipping-count, .finest-total-left span.finest-total-text, .finest-shipping-right, .finest-action-right, .finest-area-bot .finest-continue span{font-weight: ' . esc_attr( $mini_cart_box_bg_color ) . ' } ';
-    $fmc_dynamic_css .= "\n";
+
+     } ';
+      $fmc_dynamic_css .= "\n";
 }
+
+
 
 if ( 'bottom-right' == $cartpos || 'top-right' == $cartpos ) {
     if($pro_cart_width){
@@ -100,7 +110,7 @@ if ( 'bottom-right' == $cartpos || 'top-right' == $cartpos ) {
     }
 }
 
-//coupon box 
+//coupon box
 
 if($coupon_height || $coupon_width){
     $fmc_dynamic_css .= '#finiest_coupon_code {height: ' . esc_attr( $coupon_height ) . 'px } ';

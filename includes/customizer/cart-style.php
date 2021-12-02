@@ -22,10 +22,13 @@
 			'font-family'    => 'Roboto',
 		],
 		'priority'    => 10,
-		'transport'   => 'auto',
-		'output'      => [
+		'transport'   => 'postMessage',
+		'js_vars'      => [
 			[
-				'element' => '#finest-area, #finest-total, .product-total-left .product-quenty, .product-total-right #product-show-total, .finest-subtotal-left .product-subtotal, .finest-subtotal-right .subtotal-count, .finest-tax-left .product-tax-left, .finest-tax-right .tax-count, .finest-shipping-left .product-shipping, .finest-total-right .product-shipping-count,.finest-total-left span.finest-total-text, .finest-shipping-right, .finest-action-right, .finest-area-bot .finest-continue span ',
+				'element' => '#finest-area, #finest-total, .product-total-left .product-quenty, .product-total-right #product-show-total, .finest-subtotal-left .product-subtotal, .finest-subtotal-right .subtotal-count, .finest-tax-left .product-tax-left, .finest-tax-right .tax-count, .finest-shipping-left .product-shipping, .finest-total-right .product-shipping-count, .finest-total-left span.finest-total-text, .finest-shipping-right, .finest-action-right, .finest-area-bot .finest-continue span, .finest-area-middle.finest-items .finest-item-title a, .finest-cart-ttile h1, .finest-area-middle.finest-items .finest-item-qty-plus, .finest-area-middle.finest-items .finest-item-qty-minus, .finest-total-right span.total-price, input#finiest_coupon_code:focus, .finest-area-middle.finest-items .finest-item-qty .finest-item-qty-inner input',
+				'function' => 'css',
+				'property' => 'font-family',
+				'suffix' => '!important',
 			],
 		],
 	] );
@@ -121,7 +124,7 @@
 				'property' => 'height',
 				'units'    => 'px',
 			],
-		], 
+		],
 	] );
 
 	Kirki::add_field( 'finest_panel', [
@@ -236,7 +239,7 @@
 				'element'  => '#finiest_coupon_code',
 				'function' => 'css',
 				'property' => 'border-radius',
-				
+
 			],
 		],
 	] );

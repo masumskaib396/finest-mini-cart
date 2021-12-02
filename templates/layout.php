@@ -1,6 +1,5 @@
     <?php
-
-        $scsb = get_theme_mod('fmc_shopping_button', true);
+        $scsb   = get_theme_mod('fmc_shopping_button', true);
         $stotal = get_theme_mod('fmc_shipping_total', true);
         $taxtotal = get_theme_mod('fmc_tax_total', true);
         $spcount = get_theme_mod('fmc_product_ount', true);
@@ -36,7 +35,7 @@
         if ( $_product->is_visible() ) {
             $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
             $cart_title = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ); ?>
-            <div data-key="<?php echo $cart_item_key ?>" class="finest-item">
+            <div data-key="<?php echo esc_attr( $cart_item_key ) ?>" class="finest-item">
                 <div class="finest-item-inner">
                     <div class="thumbnail-title-area">
                         <?php if ( true == $spimg ): ?>
@@ -60,7 +59,7 @@
                                 <div class="finest-item-qty">
                                     <div class="finest-item-qty-inner">
                                         <span class="finest-item-qty-minus">-</span>
-                                        <input class="finest-item-qty-input" type="number" value="<?php echo $cart_item['quantity'] ?>" step="1" min="1" max="<?php echo $_product->get_stock_quantity(); ?>" data-key="<?php echo $cart_item_key; ?>"/>
+                                        <input class="finest-item-qty-input" type="number" value="<?php echo $cart_item['quantity'] ?>" step="1" min="1" max="<?php echo $_product->get_stock_quantity(); ?>" data-key="<?php echo esc_attr( $cart_item_key ) ?>"/>
                                         <span class="finest-item-qty-plus">+</span>
                                     </div>
                                 </div>
@@ -70,7 +69,7 @@
                     <div class="price-qty" >
                         <?php if ( true == $sdelete ): ?>
                         <div class="remove-icon" >
-                            <span class="finest-item-remove finest-icon-remove" data-key="<?php echo $cart_item_key ?>"><i class="icon icon-Trash-2"></i></span>
+                            <span class="finest-item-remove finest-icon-remove" data-key="<?php echo esc_attr( $cart_item_key ) ?>"><i class="icon icon-Trash-2"></i></span>
                         </div>
                         <?php endif; ?>
                         <?php if ( true == $spprice ): ?>
@@ -97,7 +96,7 @@
         </div>
         <?php endif; ?>
         <?php
-         $pqantity = get_theme_mod( 'product_quantity_text', 'Products' ); 
+         $pqantity = get_theme_mod( 'product_quantity_text', 'Products' );
         if ($spcount): ?>
         <div class="product-content-area">
             <div class="product-total-left">
@@ -109,8 +108,8 @@
         </div>
         <?php endif; ?>
 
-        <?php 
-         $psubtotal = get_theme_mod( 'product_subtotal', 'Subtotal' ); 
+        <?php
+         $psubtotal = get_theme_mod( 'product_subtotal', 'Subtotal' );
         if ($ssubtotal): ?>
         <div class="product-content-area">
             <div class="finest-subtotal-left">
@@ -122,8 +121,8 @@
         </div>
         <?php endif; ?>
 
-        <?php 
-        $ptax = get_theme_mod( 'product_tax', 'Taxes' ); 
+        <?php
+        $ptax = get_theme_mod( 'product_tax', 'Taxes' );
         if ( true == $taxtotal ) : ?>
         <div class="product-content-area">
             <div class="finest-tax-left">
@@ -135,7 +134,7 @@
         </div>
         <?php endif; ?>
         <?php
-         $pshipping = get_theme_mod( 'product_shipping_text', 'Shipping' );  
+         $pshipping = get_theme_mod( 'product_shipping_text', 'Shipping' );
         if ( true == $stotal ): ?>
         <div class="product-content-area">
             <div class="finest-shipping-left">
@@ -146,9 +145,9 @@
             </div>
         </div>
         <?php endif; ?>
-         <?php 
-         $ptotal = get_theme_mod( 'product_total_text', 'Total' );  
-         ?>   
+         <?php
+         $ptotal = get_theme_mod( 'product_total_text', 'Total' );
+         ?>
         <div class="product-content-area">
             <div class="finest-total-left">
                 <span class="finest-total-text" ><?php echo esc_html( $ptotal ) ?></span>
@@ -167,7 +166,7 @@
             <?php echo esc_html( $pcheckout ); ?>
             </a>
         </div>
-        <?php 
+        <?php
         $ptotal = get_theme_mod( 'product_continue_text', 'Continue Shopping' );
         if ( true == $scsb ): ?>
         <div class="finest-continue">

@@ -8,7 +8,7 @@ function finest_register_enqueue_script(){
     wp_enqueue_style('perfect-scrollbar', FMC_ASSETS_SCROLLBAR_CSS . 'perfect-scrollbar.min.css', array() , '0.6.14', 'all');
     wp_enqueue_style('scrollbar-theme', FMC_ASSETS_SCROLLBAR_CSS . 'custom-theme.css', array() , '0.6.14', 'all');
     wp_enqueue_style( 'dashicons' );
-    wp_enqueue_style('fmc-main', FMC_ASSETS_CSS . 'frontend.css', array() , time(), 'all');
+    wp_enqueue_style('fmc-main', FMC_ASSETS_CSS . 'frontend.css', array() , '1.0', 'all');
 
     // All jS File Enqueue
     wp_enqueue_script( 'perfect-scrollbar-js', FMC_ASSETS_SCROLLBAR_JS . 'perfect-scrollbar.jquery.min.js', array('jquery'), '0.6.14', true );
@@ -27,3 +27,6 @@ function finest_register_enqueue_script(){
 
 };
 add_action( 'wp_enqueue_scripts', 'finest_register_enqueue_script' );
+
+
+
