@@ -4,7 +4,7 @@ if (function_exists('kirki')) {
 
 	Kirki::add_panel( 'fmc_panel', array(
 	    'priority'    => 10,
-	    'title'       => esc_html__( 'Finest Mini Cart Options', 'finest-mini-cart' ),
+	    'title'       => esc_html__( 'Floating Cart for WooCommerce', 'finest-mini-cart' ),
 	) );
 
 

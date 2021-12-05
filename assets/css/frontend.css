@@ -413,6 +413,13 @@ li.wfc_remove_cpn .dashicons.dashicons-no {
     height: 12px;
     font-size: 12px;
 }
+span.finest-item-remove.finest-icon-remove i:hover {
+  transform: scale(1.3);
+}
+
+span.finest-item-remove.finest-icon-remove i {
+  transition: 0.4s;
+}
 .product-total-left .product-quenty,
 .product-total-right #product-show-total,
 .finest-subtotal-left .product-subtotal,
@@ -427,6 +434,7 @@ li.wfc_remove_cpn .dashicons.dashicons-no {
   line-height: 20px;
   color: #000000;
 }
+
 .finest_coupon_field {
   display: flex;
   justify-content: space-between;
@@ -488,7 +496,7 @@ li.wfc_remove_cpn .dashicons.dashicons-no {
 .finest-total-right span.total-price {
   font-weight: 600;
   color: #000;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 20px;
 }
 .finest-shipping-right {
@@ -498,7 +506,7 @@ li.wfc_remove_cpn .dashicons.dashicons-no {
 }
 .finest-total-left span.finest-total-text {
   color: #000;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
 }
 .finest-cart-icon {

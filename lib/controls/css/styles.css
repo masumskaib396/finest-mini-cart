@@ -884,3 +884,9 @@
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+/* sakib Custom css */
+.customize-control-kirki-custom {
+  width: calc(100% + 24px);
+  margin-left: -12px;
+}

@@ -146,7 +146,7 @@
 		'settings'    => 'coupon_border',
 		'label'       => esc_html__( 'Border', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     =>'0px',
+		'default'     =>'1px',
 		'active_callback' => [
 			[
 				'setting'  => 'cupon_border_property',
@@ -1237,7 +1237,7 @@
 		'settings'    => 'continue_bg_color',
 		'label'       => __( 'Background Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
-		'default'     => '#000000',
+		'default'     => '#fff',
 		'choices'     => [
 			'alpha' => true,
 		],
@@ -1263,7 +1263,7 @@
 		'settings'    => 'continue_color',
 		'label'       => __( 'Color', 'finest-mini-cart' ),
 		'section'     => 'finest_styles',
-		'default'     => '#ffffff',
+		'default'     => '#000000',
 		'choices'     => [
 			'alpha' => true,
 		],
@@ -1413,7 +1413,7 @@
 		'settings'    => 'continue_border_color',
 		'label'       => __( 'Border Color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => '#0088CC',
+		'default'     => '#000000',
 		'choices'     => [
 			'alpha' => true,
 		],
@@ -1652,7 +1652,7 @@
 		'settings'    => 'continue_hover_border_color',
 		'label'       => __( 'Border Color', 'finest-quickview' ),
 		'section'     => 'finest_styles',
-		'default'     => '#0088CC',
+		'default'     => '#000000',
 		'choices'     => [
 			'alpha' => true,
 		],

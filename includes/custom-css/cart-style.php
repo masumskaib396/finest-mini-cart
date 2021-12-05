@@ -8,7 +8,6 @@ $mini_cart_box_bg_color = get_theme_mod( 'mini_cart_box_bg_color', '#fff' );
 $global_typography = get_theme_mod( 'global_typography', [] );
 
 
-
 $coupon_height = get_theme_mod( 'coupon_height', '40px' );
 $coupon_width = get_theme_mod( 'coupon_width', '70%' );
 $coupon_border = get_theme_mod( 'coupon_border', '1px' );
@@ -49,21 +48,22 @@ $check_hover_border_color = get_theme_mod( 'check_hover_border_color', '#ffffff'
 $checkout_hover_border_radius = get_theme_mod( 'checkout_hover_border_radius', '0px' );
 
 //continue
-$continue_bg_color = get_theme_mod( 'continue_bg_color', '#000000' );
-$continue_color = get_theme_mod( 'continue_color', '#ffffff' );
+$continue_bg_color = get_theme_mod( 'continue_bg_color', '#ffffff' );
+$continue_color = get_theme_mod( 'continue_color', '#000000' );
 $continue_height = get_theme_mod( 'continue_height', '55px' );
-$continue_btn_border = get_theme_mod( 'continue_btn_border', '0px' );
-$continue_border_style = get_theme_mod( 'continue_border_style', 'none' );
-$continue_border_color = get_theme_mod( 'continue_border_color', '#ffffff' );
+$continue_btn_border = get_theme_mod( 'continue_btn_border', '1px' );
+$continue_border_style = get_theme_mod( 'continue_border_style', 'solid' );
+$continue_border_color = get_theme_mod( 'continue_border_color', '#000000' );
 $continue_padding = get_theme_mod( 'continue_padding' ) != ' ' ? get_theme_mod( 'continue_padding' ) : '' ;
 $continuepadding = is_array($continue_padding ) ?  implode(' ', $continue_padding) : '';
 $continue_border_radius = get_theme_mod( 'continue_border_radius', '5px' );
+
 // hover
 $continue_hover_bg_color = get_theme_mod( 'continue_hover_bg_color', '#000000' );
 $continue_hover_color = get_theme_mod( 'continue_hover_color', '#ffffff' );
-$contine_hover_btn_border = get_theme_mod( 'contine_hover_btn_border', '0px' );
-$continue_hover_border_style = get_theme_mod( 'continue_hover_border_style', 'none' );
-$continue_hover_border_color = get_theme_mod( 'continue_hover_border_color', '#ffffff' );
+$contine_hover_btn_border = get_theme_mod( 'contine_hover_btn_border', '1px' );
+$continue_hover_border_style = get_theme_mod( 'continue_hover_border_style', 'solid' );
+$continue_hover_border_color = get_theme_mod( 'continue_hover_border_color', '#000000' );
 $continue_hover_border_radius = get_theme_mod( 'continue_hover_border_radius', '0px' );
 
 if($global_color){
@@ -77,11 +77,9 @@ if($mini_cart_box_bg_color) {
 }
 
 
-if( isset($global_typography['font-weight'] ) || isset($global_typography['font-style']) || isset($global_typography['font-family'] )) {
+if( isset($global_typography['font-family'] ) ) {
       $fmc_dynamic_css .= '#finest-area, #finest-total, .product-total-left .product-quenty, .product-total-right #product-show-total, .finest-subtotal-left .product-subtotal, .finest-subtotal-right .subtotal-count, .finest-tax-left .product-tax-left, .finest-tax-right .tax-count, .finest-shipping-left .product-shipping, .finest-total-right .product-shipping-count, .finest-total-left span.finest-total-text, .finest-shipping-right, .finest-action-right, .finest-area-bot .finest-continue span, .finest-area-middle.finest-items .finest-item-title a, .finest-cart-ttile h1, .finest-area-middle.finest-items .finest-item-qty-plus, .finest-area-middle.finest-items .finest-item-qty-minus, .finest-total-right span.total-price, input#finiest_coupon_code:focus, .finest-area-middle.finest-items .finest-item-qty .finest-item-qty-inner input {
       font-family: ' . esc_attr( $global_typography['font-family'] ) .';
-      font-weight: ' . esc_attr( $global_typography['font-weight'] ) .';
-      font-style: '.$global_typography['font-style'].';
 
 
      } ';
